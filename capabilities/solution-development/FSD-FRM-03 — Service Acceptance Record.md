@@ -4,7 +4,7 @@ framework: FitSD
 document_id: FSD-FRM-03
 capability: Solution Development
 tier: 4
-version: 0.1
+version: 0.2
 status: draft
 owner: Management System Owner
 approver: Approver
@@ -12,7 +12,7 @@ governing_process: FSD-PRO
 satisfies:
   - FSD-SD-4
   - FSD-SD-5
-date: 2026-06-16
+date: 2026-06-23
 tags:
   - fitsd
   - solution-development
@@ -47,7 +47,7 @@ For each criterion, record the evidence (a link, a date, a reference) and whethe
 | **Availability** — SLO met or accepted; capacity & scaling understood; DR position recorded | | |
 | **Monitoring & alerting** — monitoring live; thresholds set; test alert observed end-to-end | | |
 | **Incident profile** — service-level incident triggers & severities registered with the incident-management process | | |
-| **Supportability / handover** — support model agreed; runbook accepted by operators; team ready; training done | | |
+| **Supportability / handover** — support model agreed; runbook accepted by operators; team ready; training done; **continuity** assured (knowledge captured, not reliant on one person) | | |
 | **Cost / licensing** — licences in place; ongoing run-cost confirmed and owned | | |
 
 ## 2. Outstanding remediation

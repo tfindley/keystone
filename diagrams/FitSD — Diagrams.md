@@ -2,10 +2,10 @@
 title: FitSD — Diagrams
 framework: FitSD
 document: Diagrams
-version: 0.1
+version: 0.2
 status: draft
 owner: Tristan Findley
-date: 2026-06-22
+date: 2026-06-23
 tags:
   - fitsd
   - diagrams
@@ -51,7 +51,7 @@ flowchart LR
       D["Demand"] --> SD["Bring in<br/>FSD-SD"]
       SD --> CH["Change and release<br/>FSD-CH"]
       CH --> RR["Run and restore<br/>FSD-RR"]
-      RR --> Ret["Retire"]
+      RR --> Ret["End-of-life<br/>review"]
     end
     SD -.->|secure by design| SA["Secure and assure<br/>FSD-SA"]
     RR -.->|protect and assure| SA
@@ -59,9 +59,9 @@ flowchart LR
 
 ---
 
-## 3. Six-tier document model
+## 3. Document model — Framework and Implementation
 
-*Embedded in `FitSD — Framework Charter` §5. Tiers 0–1 are the portable framework; tiers 2–5 are how a team implements it.*
+*Embedded in `FitSD — Framework Charter` §5. Tiers 0–1 are the portable Framework; tiers 2–5 are the per-team Implementation.*
 
 ```mermaid
 flowchart TB
@@ -86,7 +86,7 @@ flowchart TB
 
 ## 4. Service lifecycle (status)
 
-*The state a solution moves through, from idea to retirement. Useful for tracking any one solution's position in the pipeline.*
+*The state a solution moves through, from idea to retirement — including the end-of-life fork (renew / replace / retire). Useful for tracking any one solution's position in the pipeline.*
 
 ```mermaid
 stateDiagram-v2
@@ -101,7 +101,10 @@ stateDiagram-v2
     Delivery --> Acceptance
     Acceptance --> Delivery : remediation
     Acceptance --> InService : accepted
-    InService --> Retired
+    InService --> EOLReview : end of life
+    EOLReview --> InService : renew
+    EOLReview --> Idea : replace as new demand
+    EOLReview --> Retired : retire
     Rejected --> [*]
     Retired --> [*]
 ```
@@ -119,6 +122,7 @@ flowchart LR
       I3["Compliance & governance<br/>regulation, audit, exceptions"]
       I4["Risk & security<br/>risk register, vuln/incident findings"]
       I5["Operational & technical<br/>EOL/EOS, capacity, tech debt, cost"]
+      I6["Finance & people<br/>budget pressure, cost targets, headcount/skills"]
     end
     SD{{"Solution Development<br/>Gate 1 → Gate 2 → Service Acceptance"}}
     I1 --> SD
@@ -126,6 +130,7 @@ flowchart LR
     I3 --> SD
     I4 --> SD
     I5 --> SD
+    I6 --> SD
     subgraph OUT["Outputs → operational disciplines"]
       direction TB
       O1["Service catalogue / portfolio<br/>live service + owner"]
@@ -140,4 +145,33 @@ flowchart LR
     SD --> O4
     SD --> O5
     O3 -.->|"learnings become new demand"| IN
+```
+
+---
+
+## 6. Information stores
+
+*Embedded in `reference/FitSD — Information Stores`. The registers and records FitSD relies on, shown tech-agnostically — a "store" is a register or record set, never a named tool. Each is owned by a capability and tied to a lifecycle stage.*
+
+```mermaid
+flowchart TB
+    subgraph FLOW["Lifecycle"]
+      direction LR
+      Demand["Demand"] --> SDv["Solution<br/>Development"] --> Livev["Live service"] --> EOLv["End of life"]
+    end
+    Demand -.-> DR[("Demand /<br/>pipeline register")]
+    SDv -.-> GR[("Gate &<br/>acceptance records")]
+    Livev -.-> SRg[("Service register<br/>/ catalogue")]
+    Livev -.-> CRec[("Change records")]
+    Livev -.-> IRec[("Incident records<br/>+ profiles")]
+    Livev -.-> PRec[("Problem records")]
+    EOLv -.-> RRec[("Retirement<br/>records")]
+    subgraph CROSS["Always-on — Govern + Secure & assure"]
+      direction LR
+      RKg[("Risk register")]
+      EXg[("Exceptions<br/>register")]
+      DCg[("Document<br/>register")]
+      BKg[("Backup &<br/>restore-test records")]
+    end
+    FLOW -.->|maintained across every stage| CROSS
 ```

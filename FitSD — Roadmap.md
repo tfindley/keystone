@@ -6,7 +6,7 @@ tier: 0
 type: explanatory (non-normative)
 status: living
 owner: "Tristan Findley"
-date: 2026-06-22
+date: 2026-06-23
 tags: [fitsd, roadmap, plan]
 ---
 
@@ -14,17 +14,70 @@ tags: [fitsd, roadmap, plan]
 
 > The direction of travel. Bigger-picture than the `BACKLOG` (which is the task list) — this is the why and the where. Rough on purpose; a personal project moves when it moves.
 
-## Now (v0.1)
+## Now (v0.2) — shipped
 
-- The spine: charter, requirements, all five capabilities — Solution Development in full, cards for the rest.
-- A first worked example, run end to end on a real project.
-- Adoption journey, standards alignment, influences, a quickstart, a licence.
+- The **Framework** layer (Tiers 0–1): the charter and the requirements.
+- All five capabilities: Solution Development built in full (process + three forms); capability cards for Govern, Change & Release, Run & Restore, Secure & Assure.
+- The supporting layer: an elevator pitch & executive summary, adoption & positioning, standards alignment, influences, quickstart, definitions, diagrams, and a licence.
+- **v0.2 hardening:** lifecycle completion (end-of-life review & retirement — FSD-RR-7), the **information-stores** layer (every register/record made explicit and tech-agnostic), the demand pipeline + retained history in FSD-GV-4, continuity in the Definition of Done, and the new-technology intake trigger.
 
-## Next
+## In progress
 
-- **Finish the journey.** Build the maturity self-check (Tier 5) — the compass that tells a team where it stands. It's the last missing rung.
-- **Land a public worked example.** Run a real project all the way to Service Acceptance, then mine it for the SAC topic guidance — samples that are real, not invented.
-- **Supplier / supply-chain capability (FSD-SC).** The one capability not yet stubbed; closes the NIS2 supply-chain gap.
+- **A first worked example.** A real project run end to end, to Service Acceptance — *not yet written.* It's the single highest-value missing piece: the Adoption doc (§7) argues a messy, real worked example persuades better than any amount of spec, and it's the only honest source for SAC samples. *(Previously listed under "Now"; it isn't done, so it sits here until it lands.)*
+
+## Next — the unbuilt tiers
+
+Two **Implementation**-layer tiers are named in the Charter (§5) but not yet built. The guideposts below say *what each is, what "done" looks like, and the calls to make before drafting* — not the drafts themselves.
+
+### Tier 5 — Maturity self-check
+
+**What it is.** A Tier 5 document (`FitSD — Maturity Self-Check`) that lets a team score itself 0–5 on each capability, see the resulting profile at a glance, and read off the *one notch better* next step. The Adoption doc (§7) frames it as the no-bureaucracy answer to FitSM's Foundation/Advanced/Expert ladder — "a compass, not a certificate." It's the last missing rung of the adoption journey.
+
+**Why it's close to buildable.** Most of the raw material already exists: the generic 0–5 scale is in *Charter* §7, and every capability card already carries a "Maturity, briefly" thumbnail (0–1 / 2–3 / 4–5). The build is mostly *consolidation plus mechanics* — expanding those thumbnails into anchored per-level descriptors and adding a way to score and read the result.
+
+**What "done" looks like.**
+
+- A per-capability rubric (GV, SD, CH, RR, SA — SC when it lands) with concrete, observable descriptors for each level 0–5, not vibes. Anchor each level to evidence a team could actually point at.
+- A scoring method and a one-glance output — a heatmap table or a Mermaid radar — showing the capability profile.
+- Interpretation guidance that carries the Charter's principle through: nobody's expected to hit 5 everywhere; "good enough for now" is a valid score *if it was a deliberate, recorded call.*
+- A worked self-assessment (ideally scored from the real worked example, once it exists).
+
+**Calls to make before drafting.**
+
+- **Granularity:** score per capability (light) or per requirement (precise)? Lean per-capability, using the Tier 1 requirements as the evidence prompts behind each score.
+- **Output format:** heatmap table vs radar chart — pick what renders cleanly on GitHub *and* in Obsidian.
+- **Cadence:** tie the self-check to the FSD-GV-5 review cadence rather than inventing a new ritual.
+- **Evidence prompts:** give each level a "you can show…" cue so scoring resists self-flattery.
+
+**Effort & sequencing.** Small–medium; much of it is consolidation. Realistically a single focused pass once the granularity/format calls are made — this one could be greenlit for a real build now rather than waiting. No hard dependencies; benefits from the worked example for a real sample score, but doesn't block on it.
+
+### Tier 3 — Roles model
+
+**What it is.** A Tier 3 document (`FitSD — Roles`) that makes the role model canonical: each role's purpose and responsibilities, the *authority* it carries (who may approve what, at what level of risk), and how the roles collapse onto a handful of people — without ever doubling up accountability. Principle 3 already states the spirit: "one person, many hats… but every service has exactly one accountable owner."
+
+**Why it needs a guidepost first.** Unlike Tier 5, this one needs genuine design decisions, and there's an existing naming tension to resolve before drafting: *Charter* §6 names **Service Owner** and **Operator**; *FSD-PRO* §3 names **Solution Owner** and **Contributors**. Is the Solution Owner (drives the gates) the same accountability as the Service Owner (owns it once live), at two lifecycle stages? That has to be nailed down, not discovered mid-draft.
+
+**What "done" looks like.**
+
+- One reconciled role set, merging *Charter* §6 and *FSD-PRO* §3, each role with purpose, responsibilities, and the authority it holds.
+- An explicit lifecycle hand-off: how the **Solution Owner** becomes (or hands to) the **Service Owner** at Service Acceptance — the register entry (FSD-GV-4) names the live Service Owner.
+- A lightweight responsibility map (RACI or similar) across the five capabilities' key activities — kept proportionate, not a matrix for its own sake.
+- "One person, many hats" collapsing guidance with worked examples (e.g. who holds what on a 3-person team), plus the minimum that must *not* collapse (a builder shouldn't solely accept their own work — the light segregation-of-duties line that keeps NIS2 / ISO honest).
+
+**Calls to make before drafting.**
+
+- **Owner reconciliation:** Solution Owner → Service Owner as one accountability across stages (recommended), or two distinct roles with a hand-off?
+- **Approver authority:** define risk/cost tiers for who must approve what, or keep the deliberately informal "single approver by default" of FSD-SD-6?
+- **RACI granularity:** per capability vs per key activity — keep it light enough that a small team actually fills it in.
+- **Minimum viable role set:** which roles are mandatory (Owner + Approver?) and which are optional or named-only on a tiny team.
+
+**Effort & sequencing.** Medium — more design than Tier 5, and it touches existing docs (the Owner reconciliation ripples into FSD-PRO and the Charter). Light dependencies, but worth landing before or alongside Tier 5: the maturity self-check scores FSD-GV-6 (roles defined) and FSD-GV-2 (single owner), so a settled role model makes those scores meaningful.
+
+### Also queued
+
+- **Supplier / supply-chain capability (FSD-SC).** The one capability not yet stubbed; closes the NIS2 21(2)(d) gap and the ISO 27001 A.5.19–A.5.22 mapping. The likely "sixth capability," for teams with genuine supply-chain exposure. Card + requirements first, mirroring the other four; threads into Solution Development at Gate 2 (supplier assessment) and Service Acceptance.
+- **SAC topic guidance / samples.** Short "how to write a good X criterion" notes per Service Acceptance criterion — deliberately deferred until the worked example lands, so the samples are real, not invented.
+- **Gate 2 "selected option" field** on FSD-FRM-02 — the clean seam between the options evaluation and the design.
 
 ## Later — positioning and reach
 

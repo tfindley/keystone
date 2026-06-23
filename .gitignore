@@ -34,3 +34,9 @@ npm-debug.log*
 # Local notes not for the framework
 /scratch/
 *.local.md
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Repowise index (local tooling cache)
+.repowise/

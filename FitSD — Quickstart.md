@@ -6,7 +6,7 @@ tier: 0
 type: explanatory (non-normative)
 status: draft
 owner: "Tristan Findley"
-date: 2026-06-22
+date: 2026-06-23
 tags: [fitsd, quickstart, getting-started]
 ---
 
@@ -16,9 +16,11 @@ tags: [fitsd, quickstart, getting-started]
 
 You don't adopt FitSD by reading it. You adopt it by running one real piece of work through the front door and seeing whether it helps. Here's the whole thing in five moves.
 
+The shape, in one line: FitSD uses **two gates** — *is this worth doing?* (Gate 1) and *is it ready to build?* (Gate 2) — then a final **Service Acceptance** check that it's proven ready to run.
+
 ## Before you start (5 minutes)
 
-- Pick **one** real piece of upcoming work — something net-new, not a routine change. A tool to stand up, a service to replace, a capability to add.
+- Pick **one** real piece of upcoming work — something **net-new** (a new service, tool, or capability — not a routine change to something you already run). A tool to stand up, a service to replace, a capability to add.
 - Grab the three forms from `capabilities/solution-development/`: Gate 1 (Outline Proposal), Gate 2 (Solution Design), and the Service Acceptance Record.
 
 ## 1. Write the Idea Brief — half a day, tops

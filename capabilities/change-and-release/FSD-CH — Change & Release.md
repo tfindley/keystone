@@ -5,11 +5,11 @@ document_id: FSD-CH
 capability: Change & Release
 type: capability card
 tier: 2
-version: 0.1
+version: 0.2
 status: draft
 owner: "Management System Owner"
 satisfies: [FSD-CH-1, FSD-CH-2, FSD-CH-3, FSD-CH-4]
-date: 2026-06-22
+date: 2026-06-23
 tags: [fitsd, change, release, capability-card]
 ---
 
@@ -25,7 +25,9 @@ Keep changes to live services moving — quickly, in small batches, without brea
 
 ## Scope
 
-**In:** any change to a live service — config, code, infrastructure, a release. **Out:** net-new services and significant new capabilities. Those come through Solution Development first and only hand the *build* changes back here. The dividing line is the scope test in `FSD-PRO §1`.
+**In:** any change to a live service — config, code, infrastructure, a release.
+
+**Out:** net-new services and significant new capabilities. Those come through Solution Development first and only hand the *build* changes back here. The dividing line is the scope test in `FSD-PRO §1`.
 
 ## Requirements it carries (Tier 1)
 

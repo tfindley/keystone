@@ -6,7 +6,7 @@ tier: 0
 status: draft
 type: explanatory (non-normative)
 owner: "Tristan Findley"
-date: 2026-06-22
+date: 2026-06-23
 tags: [fitsd, adoption, positioning, explanatory]
 ---
 
@@ -53,6 +53,7 @@ flowchart LR
       I3["Compliance & governance<br/>regulation, audit, exceptions"]
       I4["Risk & security<br/>risk register, vuln/incident findings"]
       I5["Operational & technical<br/>EOL/EOS, capacity, tech debt, cost"]
+      I6["Finance & people<br/>budget pressure, cost targets, headcount/skills"]
     end
     SD{{"Solution Development<br/>Gate 1 → Gate 2 → Service Acceptance"}}
     I1 --> SD
@@ -60,6 +61,7 @@ flowchart LR
     I3 --> SD
     I4 --> SD
     I5 --> SD
+    I6 --> SD
     subgraph OUT["Outputs → operational disciplines"]
       direction TB
       O1["Service catalogue / portfolio<br/>live service + owner"]

@@ -4,12 +4,12 @@ framework: FitSD
 document_id: FSD-FRM-02
 capability: Solution Development
 tier: 4
-version: 0.1
+version: 0.2
 status: draft
 owner: Management System Owner
 approver: Approver
 governing_process: FSD-PRO
-date: 2026-06-16
+date: 2026-06-23
 tags:
   - fitsd
   - solution-development
@@ -88,7 +88,7 @@ State *how* each criterion will be met. Each is proven later on FSD-FRM-03.
 | **Availability** | *Expected availability / SLO, capacity & scaling, DR considerations* |
 | **Monitoring & alerting** | *What is monitored, thresholds, where alerts route* |
 | **Incident profile** | *What counts as an incident for this service — triggers and severities — to register with the incident-management process* |
-| **Supportability / handover** | *Operating & support model, runbook, training needed* |
+| **Supportability / handover** | *Operating & support model, runbook, training needed; how continuity is assured — cross-training / knowledge capture so the service isn't reliant on one person* |
 | **Cost / licensing** | *Expected run-cost and licences* |
 
 ## 6. RAIDD
