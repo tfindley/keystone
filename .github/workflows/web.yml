@@ -1,0 +1,91 @@
+name: Web
+
+# Build the website container and push it to GHCR whenever the site or the canonical
+# standard changes. Hosting is self-managed: the host pulls ghcr.io/<owner>/fitsd-web
+# and runs it behind Traefik (see web/docker-compose.yml).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      # canonical standard — vendored into the site, so a doc edit must rebuild it
+      - "*.md"
+      - "capabilities/**"
+      - "reference/**"
+      - "diagrams/**"
+      - ".github/workflows/web.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: web-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  image:
+    name: Build & push image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install deps
+        run: npm ci
+        working-directory: web
+
+      # The Docker build (context ./web) can't reach the repo-root canonical docs, so the
+      # vendored copies in web/src/content/docs are committed. Fail if they have drifted
+      # (someone edited a canonical file without re-running the vendor).
+      - name: Verify vendored docs are in sync
+        run: npm run vendor:check
+        working-directory: web
+
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Independent site semver from web/package.json (bump it for site changes).
+      - name: Site version
+        id: site
+        run: echo "version=$(node -p "require('./web/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      # The FitSD spec version this image publishes — driven by the standard's VERSION file.
+      - name: Spec version
+        id: spec
+        run: echo "version=$(cat VERSION)" >> "$GITHUB_OUTPUT"
+
+      - name: Image metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/fitsd-web
+          tags: |
+            type=raw,value=latest
+            type=sha,format=short
+            type=raw,value=site-v${{ steps.site.outputs.version }}
+            type=raw,value=spec-v${{ steps.spec.outputs.version }}
+
+      - name: Build & push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./web
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

@@ -1,0 +1,55 @@
+---
+title: "FSD-FRM-03 — Service Acceptance Record"
+description: "Form FSD-FRM-03 — the close-out that proves a service is operable before it goes live."
+sidebar:
+  label: "Service Acceptance Record"
+framework: "FitSD"
+tier: "4"
+status: "draft"
+# vendored from the canonical standard — do not edit here. Edit the repo-root .md.
+---
+
+> **Service Acceptance asks: is it proven done?** A solution is accepted into service only when each Service Acceptance Criterion is met **and evidenced** — not merely configured. The approaches were designed at Gate 2 (FSD-FRM-02); here they are proven. The live copy is held in the team's work-tracking system; this is the blank template.
+
+## Header
+
+| Field                            | Entry |
+| -------------------------------- | ----- |
+| **Solution title**               |       |
+| **Solution Owner**               |       |
+| **Delivery project (ref)**       |       |
+| **Linked Gate 2 (FSD-FRM-02)** |       |
+| **Date**                         |       |
+
+## 1. Acceptance criteria
+
+For each criterion, record the evidence (a link, a date, a reference) and whether it is met.
+
+| Criterion | Evidence / link | Met? (Y/N) |
+|---|---|---|
+| **Documentation** — HLD, runbook, recovery procedure, user/how-to published | | |
+| **Backup (tested)** — backup in place **and test restore performed**, dated | | |
+| **Security** — hardening applied, patch path set (FSD-RR), vuln posture acceptable, exceptions logged (FSD-SA) | | |
+| **Access** — access model implemented; least privilege; JML handling confirmed | | |
+| **Availability** — SLO met or accepted; capacity & scaling understood; DR position recorded | | |
+| **Monitoring & alerting** — monitoring live; thresholds set; test alert observed end-to-end | | |
+| **Incident profile** — service-level incident triggers & severities registered with the incident-management process | | |
+| **Supportability / handover** — support model agreed; runbook accepted by operators; team ready; training done; **continuity** assured (knowledge captured, not reliant on one person) | | |
+| **Cost / licensing** — licences in place; ongoing run-cost confirmed and owned | | |
+
+## 2. Outstanding remediation
+
+*List any criterion not yet met, the action required, and the owner/date. The record is re-presented when these are closed.*
+
+| Criterion | Action required | Owner | Target date |
+| --------- | --------------- | ----- | ----------- |
+|           |                 |       |             |
+
+## 3. Acceptance sign-off
+
+| Field          | Entry                                        |
+| -------------- | -------------------------------------------- |
+| **Decision**   | Accepted into service / Remediation required |
+| **Approver**   |                                              |
+| **Conditions** |                                              |
+| **Date**       |                                              |

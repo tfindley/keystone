@@ -1,0 +1,126 @@
+/* FitSD brand layer over Starlight.
+   Aesthetic: editorial-institutional — a citable standard, not a SaaS landing.
+   Warm paper / deep ink, a single confident pine-green "go / ready" accent, and the
+   FitSD codes (FSD-GV, Tier 0) treated as a typographic motif. Fonts self-hosted. */
+
+/* --- self-hosted fonts (no external requests; keeps CSP 'self') --- */
+@import "@fontsource-variable/fraunces/standard.css";
+@import "@fontsource-variable/fraunces/standard-italic.css";
+@import "@fontsource/public-sans/400.css";
+@import "@fontsource/public-sans/500.css";
+@import "@fontsource/public-sans/600.css";
+@import "@fontsource/public-sans/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
+:root {
+  --sl-font: "Public Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --sl-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --fitsd-font-display: "Fraunces Variable", Fraunces, Georgia, "Times New Roman", serif;
+
+  /* Dark theme (Starlight's default). Pine accent, brightened for contrast on ink. */
+  --sl-color-accent-low: #0f2419;
+  --sl-color-accent: #2f7d57;
+  --sl-color-accent-high: #a9e3c2;
+  --sl-color-text-accent: #6fd29f;
+
+  /* a touch warmer ink than pure slate */
+  --sl-color-bg: #0d1310;
+  --sl-color-bg-nav: #0d1310f2;
+  --sl-color-bg-sidebar: #0b100d;
+}
+
+/* Light theme — warm paper, deep pine for accents/links. */
+:root[data-theme="light"] {
+  --sl-color-accent-low: #d6ebdd;
+  --sl-color-accent: #2c7150;
+  --sl-color-accent-high: #123524;
+  --sl-color-text-accent: #1f5e3f;
+
+  --sl-color-bg: #f7f3ea;
+  --sl-color-bg-nav: #f7f3eaf2;
+  --sl-color-bg-sidebar: #f1ece0;
+  --sl-color-white: #1a1f1b;
+  --sl-color-gray-7: #14110c;
+  --sl-color-hairline-shade: #e4dccb;
+}
+
+/* --- display type: the standard's voice --- */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+h1#_top,
+.hero h1,
+.content-panel h1 {
+  font-family: var(--fitsd-font-display);
+  font-optical-sizing: auto;
+  font-weight: 560;
+  letter-spacing: -0.01em;
+}
+.sl-markdown-content h1,
+.hero h1 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* The page-title block: give the standard a little editorial weight + a hairline. */
+.content-panel:first-of-type h1 {
+  line-height: 1.08;
+}
+
+/* --- the code motif: FSD-GV, Tier 0, MoSCoW read like clause numbers --- */
+.sl-markdown-content code:not(:where(pre code)) {
+  font-family: var(--sl-font-mono);
+  font-size: 0.86em;
+  padding: 0.12em 0.42em;
+  border-radius: 0.3rem;
+  border: 1px solid var(--sl-color-hairline);
+  background: var(--sl-color-accent-low);
+  color: var(--sl-color-text-accent);
+  letter-spacing: 0.01em;
+}
+
+/* Blockquotes are how every FitSD doc opens (the lede). Make that intentional. */
+.sl-markdown-content blockquote {
+  border-inline-start: 3px solid var(--sl-color-accent);
+  background: color-mix(in srgb, var(--sl-color-accent-low) 55%, transparent);
+  border-radius: 0 0.4rem 0.4rem 0;
+  font-style: normal;
+}
+
+/* Tables show up a lot (requirements, alignment, fit-by-size) — tighten them. */
+.sl-markdown-content table {
+  font-size: 0.92rem;
+}
+.sl-markdown-content th {
+  font-family: var(--sl-font);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* --- per-page metadata badge (Tier / status) injected via a component override --- */
+.fitsd-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-block: 0.2rem 0.4rem;
+}
+.fitsd-badge {
+  font-family: var(--sl-font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.18rem 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--sl-color-hairline);
+  color: var(--sl-color-gray-2);
+  background: var(--sl-color-bg-sidebar);
+}
+.fitsd-badge[data-kind="tier"] {
+  color: var(--sl-color-text-accent);
+  border-color: color-mix(in srgb, var(--sl-color-accent) 45%, var(--sl-color-hairline));
+}
+.fitsd-badge[data-kind="status"] {
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+}

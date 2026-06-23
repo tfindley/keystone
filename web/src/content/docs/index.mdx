@@ -1,0 +1,63 @@
+---
+title: FitSD
+description: "FitSD (Fit for Solution Development) is a lightweight, vendor-neutral service-management framework for small technical teams: one front door for new work, two decision gates, and a definition of done that means operable. CC BY 4.0."
+template: splash
+hero:
+  title: Service management a small team can actually keep up.
+  tagline: "Just enough process to take on the right work and ship it so it lasts — one front door for new work, and a “done” that means operable, not merely running."
+  actions:
+    - text: Start with the Quickstart
+      link: /quickstart/
+      icon: right-arrow
+      variant: primary
+    - text: What is FitSD?
+      link: /framework/charter/
+      icon: open-book
+      variant: minimal
+    - text: GitHub
+      link: https://github.com/tfindley/keystone
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Small teams can't run ITIL — it assumes a department and a budget for process nobody
+has. But they still have to decide what's worth building, design it so it can actually
+be run, and avoid the 2&nbsp;a.m. page for something nobody wrote down. FitSD is the
+smallest amount of that discipline a handful of people can keep up.
+
+## Two things do most of the work
+
+<CardGrid>
+  <Card title="One front door" icon="seti:lock">
+    New work enters through a single intake and two light decision gates — **Gate&nbsp;1**
+    (*is this worth doing?*) and **Gate&nbsp;2** (*is it ready to build?*). Effort is
+    earned at a gate; nothing is built on a whim.
+  </Card>
+  <Card title="Readiness is the finish line" icon="approve-check">
+    Nothing reaches live service until it is *evidenced* as ready — documented,
+    recoverable (with a tested restore), secure, monitored and supportable. “Done”
+    means operable, not just switched on.
+  </Card>
+</CardGrid>
+
+## How it stays light
+
+FitSD owns only a thin set of testable requirements. It ships a full, ready-to-use
+process for one capability — **Solution Development**, the front door — and for the
+other four it states the requirement and points at the standard or process a team
+already runs. That single choice is how it can require change, incident and security
+discipline *without rebuilding those disciplines*.
+
+<CardGrid>
+  <LinkCard title="Quickstart" href="/quickstart/" description="One project, five moves — a win this week, not a rollout plan." />
+  <LinkCard title="The Charter" href="/framework/charter/" description="What FitSD is: principles, the capability model, roles, conformance." />
+  <LinkCard title="Requirements" href="/framework/requirements/" description="The testable “shall” statements — the spine an auditor would check." />
+  <LinkCard title="Adoption & Positioning" href="/adoption/positioning/" description="Who it's for, why they adopt it, and how it fits by team size." />
+</CardGrid>
+
+---
+
+It's a personal project, deliberately not tied to any one organisation, and released
+under **Creative Commons Attribution 4.0 (CC BY 4.0)** so any team can adopt and adapt it.

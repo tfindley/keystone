@@ -1,0 +1,31 @@
+---
+// The Tier / status / framework badges carried through by the vendor onto each standard
+// page. Shared by both PageTitle variants (with and without the versions plugin loaded).
+const data = Astro.locals.starlightRoute.entry.data as Record<string, unknown>;
+const framework = typeof data.framework === "string" ? data.framework : undefined;
+const tier = data.tier === 0 || data.tier ? String(data.tier) : undefined;
+const status = typeof data.status === "string" ? data.status : undefined;
+const hasBadges = framework || tier !== undefined || status;
+---
+
+{
+  hasBadges && (
+    <div class="fitsd-badges" aria-label="Document metadata">
+      {framework && (
+        <span class="fitsd-badge" data-kind="framework">
+          {framework}
+        </span>
+      )}
+      {tier !== undefined && (
+        <span class="fitsd-badge" data-kind="tier">
+          Tier {tier}
+        </span>
+      )}
+      {status && (
+        <span class="fitsd-badge" data-kind="status">
+          {status}
+        </span>
+      )}
+    </div>
+  )
+}
