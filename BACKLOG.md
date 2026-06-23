@@ -4,13 +4,18 @@ framework: FitSD
 document: Backlog
 status: living
 owner: "Tristan Findley"
-date: 2026-06-22
+date: 2026-06-23
 tags: [fitsd, backlog]
 ---
 
 # FitSD — Backlog
 
 Deferred ideas and improvements surfaced while building the framework, many from dogfooding it on a real project. Not yet scheduled.
+
+## Framework tiers
+
+- **Tier 3 — Roles model.** Canonical role definitions, authority levels, and a light RACI across the five capabilities; reconciles Solution Owner (FSD-PRO §3) with Service Owner (Charter §6). Guidepost in the `Roadmap`.
+- **Tier 5 — Maturity self-check.** The 0–5 capability self-assessment described in the Charter (§7). Most of the content already exists in the cards' "Maturity, briefly" thumbnails. Guidepost in the `Roadmap`.
 
 ## Capabilities
 
@@ -20,10 +25,11 @@ Deferred ideas and improvements surfaced while building the framework, many from
 
 - **SAC topic guidance / sample documents.** Short "how to write a good X criterion" notes (and worked samples) per SAC topic. *Deferred deliberately until a worked example has landed*, so the samples are real, not invented.
 - **Gate 2 "selected option" field.** Add an explicit "Selected option + evaluation reference" field to FSD-FRM-02 — the clean seam between the options evaluation (research) and design. (Surfaced by the Gate 2 test.)
-- **Maturity self-check (Tier 5).** The 0–5 capability self-assessment described in the Charter.
 
 ## Done (recent)
 
+- ~~Lifecycle completion & information-stores layer (v0.2)~~ — FSD-RR-7 (end-of-life review & retirement); FSD-GV-4 broadened (demand pipeline + retained history); continuity added to the SAC; new-technology intake trigger + Gate 1 vendor due-diligence; new `reference/FitSD — Information Stores` + Diagrams §6; tier model reframed into Framework / Implementation layers. *(2026-06-23)*
+- ~~Consistency pass (v0.1 review)~~ — added the sixth demand family (Finance & people) to the context diagrams; synced the Gate 2 "rework" edge label across both gate-flow diagrams; reconciled the "sixth capability" wording in Charter §4 with the FSD-SC plan; gitignored `.repowise/` and `.claude/settings.local.json`. *(2026-06-23)*
 - ~~De-number the SAC~~ — removed the hardcoded count from prose and the `#` column; criteria referenced by name. *(2026-06-22)*
 - ~~Split SAC "Monitoring, alerting & incident triggers"~~ — now **Monitoring & alerting** and **Incident profile** as separate criteria. *(2026-06-22)*
 - ~~Compliance/risk driver in Gate 1~~ — primary driver + Risk/Compliance value lens. *(2026-06-22)*

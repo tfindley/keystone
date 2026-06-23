@@ -4,12 +4,12 @@ framework: FitSD
 document_id: FSD-FRM-01
 capability: Solution Development
 tier: 4
-version: 0.1
+version: 0.2
 status: draft
 owner: Management System Owner
 approver: Approver
 governing_process: FSD-PRO
-date: 2026-06-16
+date: 2026-06-23
 tags:
   - fitsd
   - solution-development
@@ -80,7 +80,19 @@ Size each as **S / M / L** with a short note. Remember to consider all aspects �
 | #1     |      |      |              |            |
 | #2     |      |      |              |            |
 
-## 6. Proof of Concept *(optional — only if feasibility is still in doubt)*
+## 6. New technology / vendor *(complete if this brings in a new technology, tool, product or third-party dependency)*
+
+Due diligence so a new dependency comes in through the front door, not the back. Fill this whenever the work adopts a new tool, product or supplier — **regardless of cost or effort**.
+
+| Field                   | Entry                                                                            |
+| ----------------------- | -------------------------------------------------------------------------------- |
+| **New tech / tool?**    | Yes / No — what is being adopted                                                  |
+| **Vendor & licensing**  | *Licence model and cost; the supplier, and how they've been to deal with so far* |
+| **Upgrade path**        | *How and how often it's updated; its support / end-of-life horizon*              |
+| **Support & ownership** | *Who owns and supports it once live*                                             |
+| **Exit / alternatives** | *How we'd get off it if needed; alternatives considered*                         |
+
+## 7. Proof of Concept *(optional — only if feasibility is still in doubt)*
 
 | Field                    | Entry                                    |
 | ------------------------ | ---------------------------------------- |
@@ -89,11 +101,9 @@ Size each as **S / M / L** with a short note. Remember to consider all aspects �
 | **Success criteria**     | *How we judge it proved*                 |
 | **Method & cost**        | *Where you'll run it, and what it costs* |
 | **Resources & duration** |                                          |
-| **Vendor & licensing**   | *If a product or vendor is involved: licence model and cost, and how the vendor has been to deal with so far* |
-| **Upgrade path**         | *How the product is updated, and how often* |
 | **Result / conclusion**  | *Completed after the PoC, before Gate 2* |
 
-## 7. Sign-off
+## 8. Sign-off
 
 Sign-off authorises progression to Gate 2 (or to a PoC first). Note any conditions.
 

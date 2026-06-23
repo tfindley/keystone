@@ -3,10 +3,10 @@ title: FitSD — Requirements
 framework: FitSD
 document: Requirements
 tier: 1
-version: 0.1
+version: 0.2
 status: draft
 owner: Tristan Findley
-date: 2026-06-16
+date: 2026-06-23
 tags:
   - fitsd
   - framework
@@ -16,7 +16,9 @@ tags:
 
 # FitSD — Requirements
 
-> **Status: v0.1 draft, founding layer.** This is Tier 1 of FitSD — the testable spine. Each requirement is a "shall" statement that an implementation must satisfy to conform, by whatever local documents and tools it chooses (see *Charter* §7). Requirements are grouped by the five capabilities. IDs are stable; wording will be refined.
+> **TL;DR** — The testable "shall" statements you must meet to conform, grouped by the five capabilities. Each is a one-line outcome; the right-hand **Note** says what it means in practice. Meet them with your own documents and tools — FitSD ships a full process only for Solution Development.
+
+> **Status: v0.2 draft, founding layer.** This is Tier 1 of FitSD — the testable spine. Each requirement is a "shall" statement that an implementation must satisfy to conform, by whatever local documents and tools it chooses (see *Charter* §7). Requirements are grouped by the five capabilities. IDs are stable; wording will be refined.
 
 ## How to read this
 
@@ -37,23 +39,23 @@ The management system itself.
 | **FSD-GV-1** | The scope of services under management **shall** be defined and recorded.                                            | What is in and out of the system.           |
 | **FSD-GV-2** | Each service **shall** have a single named owner accountable for it.                                                 | Roles may be shared; accountability is not. |
 | **FSD-GV-3** | Documents that govern services **shall** be version-controlled, each with an owner, an approver, and a review cycle. | Document control.                           |
-| **FSD-GV-4** | A register of services and key records **shall** be maintained and kept current.                                     | The system's index.                         |
+| **FSD-GV-4** | A register of services, the demand pipeline, and key records **shall** be maintained and kept current, with completed and retired entries retained as the historical record.                                     | The system's index — the upcoming, in-flight and completed view. |
 | **FSD-GV-5** | The management system **shall** be reviewed at a defined cadence and improved (Plan-Do-Check-Act).                   | Continual improvement.                      |
 | **FSD-GV-6** | Roles **shall** be defined, including who may authorise what.                                                        | One person may hold several.                |
 
 ## FSD-SD — Bring in (Solution Development)
 
-The front door. How net-new work enters and reaches live service.
+The front door. How net-new work enters and reaches live service — and the control point for adopting new technology.
 
 **Reference (how satisfied):** the one capability FitSD ships in full — `FSD-PRO` plus the Gate and Acceptance forms (Tier 2/4). This is the framework's flagship; everything else references out.
 
 | ID          | Requirement                                                                                                                                                                                                           | Note                                             |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| **FSD-SD-1** | Net-new services **shall** enter through a defined intake before build effort is committed.                                                                                                                           | A scope test separates this from routine change. |
+| **FSD-SD-1** | Net-new services **shall** enter through a defined intake before build effort is committed.                                                                                                                           | A scope test separates this from routine change — including adopting a **new technology, tool or third-party dependency** the team must own, support or secure, regardless of cost or effort. |
 | **FSD-SD-2** | A new service **shall** pass a value/feasibility decision before design begins.                                                                                                                                       | Gate 1 — "worth doing?"                          |
 | **FSD-SD-3** | A new service **shall** pass a design-readiness decision before delivery, covering how it will be operated.                                                                                                           | Gate 2 — "ready to build?"                       |
 | **FSD-SD-4** | Every new or materially changed service **shall** meet a defined Service Acceptance / Definition of Done before entering live service, **evidenced** rather than asserted.                                            | Readiness baked in.                              |
-| **FSD-SD-5** | Service Acceptance **shall**, as a minimum, cover: documentation; tested backup and recoverability; security; access control; availability; monitoring and alerting; service-level incident triggers; supportability and handover; and cost/licensing. | The Definition of Done (see FSD-PRO §7); the set may grow as practice matures. Incident triggers also satisfy FSD-RR-6. |
+| **FSD-SD-5** | Service Acceptance **shall**, as a minimum, cover: documentation; tested backup and recoverability; security; access control; availability; monitoring and alerting; service-level incident triggers; supportability, handover and continuity (operating knowledge captured, not reliant on a single person); and cost/licensing. | The Definition of Done (see FSD-PRO §7); the set may grow as practice matures. Incident triggers also satisfy FSD-RR-6. |
 | **FSD-SD-6** | Each gate and acceptance decision **shall** have a single accountable approver and be recorded.                                                                                                                       | Lightweight, single-approver by default.         |
 
 ## FSD-CH — Change & release
@@ -73,7 +75,7 @@ Changing live services safely.
 
 Keeping services healthy.
 
-**Reference (how satisfied):** FitSD does **not** build incident or problem management — most organisations run a **central incident-management policy**. Satisfy via that policy (or ITIL *Incident / Problem / Monitoring and event*, FitSM PR9/PR10/PR4). FitSD's distinct contribution is to require each *service* to plug into it — see FSD-RR-6.
+**Reference (how satisfied):** FitSD does **not** build incident or problem management — most organisations run a **central incident-management policy**. Satisfy via that policy (or ITIL *Incident / Problem / Monitoring and event*, FitSM PR9/PR10/PR4). FitSD's distinct contribution is twofold: require each *service* to plug into it (FSD-RR-6), and require services to be retired cleanly at end of life (FSD-RR-7).
 
 | ID          | Requirement                                                                                                 | Note                 |
 | ----------- | ----------------------------------------------------------------------------------------------------------- | -------------------- |
@@ -83,6 +85,7 @@ Keeping services healthy.
 | **FSD-RR-4** | Services **shall** be monitored against expected availability, and capacity managed ahead of need.          |                      |
 | **FSD-RR-5** | Security patches **shall** be assessed and applied within risk-based timescales.                            |                      |
 | **FSD-RR-6** | Each service **shall** declare a **service-level incident profile** — what constitutes an incident *for that service*, with triggers and severities — registered with the incident-management process. | The gap most orgs have: central policy defines "an incident" generically; the per-service triggers are rarely written down. Defined at Service Acceptance (SAC), consumed by the central process. |
+| **FSD-RR-7** | When a service reaches end of life (EOL/EOS, obsolescence, or no longer needed), a decision **shall** be recorded — **renew, replace, or retire** — and, if retired, decommissioning **shall** be controlled: data handled, access revoked, SLAs withdrawn, documentation archived, the register updated, and operating knowledge captured (so another person could run or wind it down). | Closes the lifecycle. *Replace* routes back to Solution Development as new demand; *renew* keeps it running (contract/licence via the planned FSD-SC); access and data disposal tie to FSD-SA. |
 
 ## FSD-SA — Secure & assure
 

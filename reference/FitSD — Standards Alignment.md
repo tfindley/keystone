@@ -3,10 +3,10 @@ title: FitSD — Standards Alignment
 framework: FitSD
 document: Standards Alignment
 tier: 0
-version: 0.1
+version: 0.2
 status: draft
 owner: Tristan Findley
-date: 2026-06-22
+date: 2026-06-23
 tags:
   - fitsd
   - reference
@@ -98,10 +98,10 @@ FitSD's Service Acceptance Criteria and FSD-SA operationalise specific controls 
 | SAC: Access (least privilege, JML) / FSD-SA-2 | A.5.15, A.5.18, A.8.2, A.8.3                                                         |
 | SAC: Availability / DR                      | A.5.29, A.5.30 (ICT readiness for continuity), A.8.14 Redundancy                     |
 | FSD-SA-1 Risk register                         | Clause 6.1 + A.5.x organisational controls                                           |
-| SAC: Supportability / training              | A.6.3 Awareness & training                                                           |
+| SAC: Supportability, continuity & training  | A.6.3 Awareness & training                                                           |
 | Supplier thread (FSD-SC backlog)               | A.5.19–A.5.22 Supplier relationships                                                 |
 
-**Framing:** FitSD provides the operational muscle memory and evidence artefacts (Service Acceptance Records, risk register, change records). The journey to certification adds the ISMS management layer on top — FitSD is ISO 27001 "stage 0–1".
+**Framing:** FitSD provides the operational muscle memory and evidence artefacts (Service Acceptance Records, risk register, change records). The journey to certification adds the ISMS management layer on top — FitSD is ISO 27001 "stage 0–1". Controlled retirement (FSD-RR-7) also maps to A.8.10 information deletion and A.5.11 return of assets, and continuity (FSD-SD-5) reinforces A.6.3.
 
 ## 6. NIS2 Directive — what FitSD solves / complements / misses
 
@@ -115,7 +115,7 @@ Mapping FitSD to **NIS2 Article 21(2)** minimum measures. (NIS2 is a *law* — o
 | (d) Supply chain security                                                       | —                                                             | ❌ Gap → FSD-SC capability (backlog) |
 | (e) Security in acquisition, development & maintenance + vulnerability handling | FSD-SD intake + SAC Security (secure-by-design, patch path) | ✅ Signature strength               |
 | (f) Policies to assess effectiveness                                            | FSD-GV PDCA, maturity self-check, metrics                      | ✅ Solves                           |
-| (g) Cyber hygiene & training                                                    | SAC Supportability/handover                                      | 🟡 Partial                         |
+| (g) Cyber hygiene & training                                                    | SAC Supportability/handover + **continuity** (FSD-SD-5)          | 🟡 Partial (improving)             |
 | (h) Cryptography / encryption                                                   | —                                                             | ❌ Gap (control-level)              |
 | (i) HR security, access control, asset mgmt                                     | FSD-SA-2 (access); register (assets)                           | 🟡 Partial (HR security missing)   |
 | (j) MFA / secure comms                                                          | —                                                             | ❌ Gap                              |

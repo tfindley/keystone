@@ -5,11 +5,11 @@ document_id: FSD-RR
 capability: Run & Restore
 type: capability card
 tier: 2
-version: 0.1
+version: 0.2
 status: draft
 owner: "Management System Owner"
-satisfies: [FSD-RR-1, FSD-RR-2, FSD-RR-3, FSD-RR-4, FSD-RR-5, FSD-RR-6]
-date: 2026-06-22
+satisfies: [FSD-RR-1, FSD-RR-2, FSD-RR-3, FSD-RR-4, FSD-RR-5, FSD-RR-6, FSD-RR-7]
+date: 2026-06-23
 tags: [fitsd, run, restore, incident, capability-card]
 ---
 
@@ -25,7 +25,7 @@ Detect when something's wrong, fix it fast, and stop it happening twice. This is
 
 ## Scope
 
-**In:** incidents and major incidents, problems, monitoring and availability, capacity, patching, and each service's incident profile. **Out:** building new services (Solution Development) and changing them (Change & Release).
+**In:** incidents and major incidents, problems, monitoring and availability, capacity, patching, each service's incident profile, and **end-of-life review & retirement**. **Out:** building new services (Solution Development) and changing them (Change & Release).
 
 ## Requirements it carries (Tier 1)
 
@@ -35,6 +35,7 @@ Detect when something's wrong, fix it fast, and stop it happening twice. This is
 - **FSD-RR-4** — services monitored against expected availability; capacity managed ahead of need.
 - **FSD-RR-5** — security patches assessed and applied to risk-based timescales.
 - **FSD-RR-6** — each service declares its incident profile — what counts as an incident *for it*, with severities — registered with the incident process.
+- **FSD-RR-7** — at end of life, a renew / replace / retire decision is recorded; retirement is carried out cleanly (data, access, SLAs, docs, register, knowledge).
 
 ## How to satisfy them
 
@@ -44,11 +45,11 @@ Most teams already run a central incident policy — use it. Map onto:
 - **ITIL 4 Incident, Problem, and Monitoring & Event management.**
 - **Your central incident-management policy** for the escalation and comms path.
 
-FitSD's one distinct contribution here is **FSD-RR-6** — the per-service incident profile. Central policies define "an incident" in the abstract; almost nobody writes down what it means for *this* service. FitSD makes you, at Service Acceptance.
+FitSD's distinct contributions here are two. **FSD-RR-6** — the per-service incident profile: central policies define "an incident" in the abstract; almost nobody writes down what it means for *this* service (FitSD makes you, at Service Acceptance). And **FSD-RR-7** — controlled end-of-life: most teams have no clean way to retire a service, so they never quite do; FitSD makes the renew / replace / retire decision explicit and the decommission controlled.
 
 ## Where it meets Solution Development
 
-The Service Acceptance criteria are the hand-over. **Monitoring & alerting**, the **incident profile**, and the **supportability / handover** all pass from a new service into Run & Restore the moment it's accepted. And the loop closes: what you learn running a service — a nasty incident, a capacity ceiling — comes back round as fresh demand at the front door.
+The Service Acceptance criteria are the hand-over. **Monitoring & alerting**, the **incident profile**, and the **supportability / handover** all pass from a new service into Run & Restore the moment it's accepted. And the loop closes at end of life (FSD-RR-7): a service is reviewed and either **renewed** (keep running), **replaced** (the function's still needed — back through the front door as fresh demand) or **retired** (decommissioned cleanly). What you learn running a service — a nasty incident, a capacity ceiling — also comes back round as new demand.
 
 ## The feedback lens
 

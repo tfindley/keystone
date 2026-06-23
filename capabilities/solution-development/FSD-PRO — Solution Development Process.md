@@ -4,7 +4,7 @@ framework: FitSD
 document_id: FSD-PRO
 capability: Solution Development
 tier: 2
-version: 0.1
+version: 0.2
 status: draft
 owner: Management System Owner
 approver: Approver
@@ -16,7 +16,7 @@ satisfies:
   - FSD-SD-5
   - FSD-SD-6
 review_cycle: Annual, or on material change to how the team takes on new work
-date: 2026-06-16
+date: 2026-06-23
 tags:
   - fitsd
   - solution-development
@@ -29,9 +29,11 @@ tags:
 
 *FitSD reference capability — Solution Development. Satisfies FSD-SD-1…6.*
 
+> **TL;DR** — The front door for new work: two gates (*worth doing?* → *ready to build?*) and a Service Acceptance close-out (*proven done?*). The scope test in §1 decides what comes through here versus routine change. This is the one process FitSD ships in full.
+
 ## §1 Purpose and Scope
 
-This process controls how net-new work enters the team's stream and follows it through to the point it is accepted into live service. The point is plain: don't commit real effort until an idea has earned it, and don't call something done until it can actually be run — documented, recoverable, secure, access-controlled and monitored, not just switched on.
+This process controls how net-new work enters the team's stream and follows it through to the point it is accepted into live service. It is also the team's **control point for adopting new technology** — nothing new gets picked up without due diligence — and it feeds the registers that show what's upcoming, in-flight and live. The point is plain: don't commit real effort until an idea has earned it, and don't call something done until it can actually be run — documented, recoverable, secure, access-controlled and monitored, not just switched on.
 
 It uses **two decision gates** at the front and a **Service Acceptance** close-out at the end:
 
@@ -44,7 +46,8 @@ It uses **two decision gates** at the front and a **Service Acceptance** close-o
 - It introduces a **new service, product, or platform capability** not currently offered; or
 - It requires **new infrastructure or a new architecture**, beyond a configuration change to something that already exists; or
 - Its estimated effort exceeds **approximately 10 person-days**; or
-- It creates a **material new ongoing operating burden or cost** — a new support or operational responsibility, new licensing, or a new run-cost.
+- It creates a **material new ongoing operating burden or cost** — a new support or operational responsibility, new licensing, or a new run-cost; or
+- It introduces a **new technology, tool, or third-party dependency** the team will have to own, support or secure — *regardless of cost or effort.* This is the anti-sprawl trigger: a new thing doesn't slip in by the back door just because it's small or free.
 
 **Out of scope.** Routine changes and minor enhancements are handled under the **Change & Release** capability (FSD-CH). Incidents, problems and patching are handled under **Run & Restore** (FSD-RR). Work that begins here always hands the actual build and deployment back to Change & Release — this process governs the *decision to take on and design* the work, not the individual changes that deliver it.
 
@@ -91,7 +94,7 @@ flowchart LR
     G1 -->|proceed| G2{"Gate 2<br/>ready to build?"}
     Rework -->|resubmit| G2
     PoC --> G2
-    G2 -->|changes<br/>required| Rework
+    G2 -->|rework| Rework
     G2 -->|approved| Del["Delivery<br/>build via FSD-CH"]
     Del --> SA{"Service Acceptance<br/>proven done?"}
     SA -->|remediation| Del
@@ -145,7 +148,7 @@ The lifecycle runs Idea → Gate 1 → optional PoC → Gate 2 → Delivery → 
 | **Availability** | Expected availability / SLO met or accepted; capacity and scaling understood; DR position recorded |
 | **Monitoring & alerting** | Monitoring live with thresholds set and alert routing confirmed; a test alert observed end-to-end |
 | **Incident profile** | Service-level incident triggers and severities defined — what counts as an incident for *this* service — and registered with the incident-management process (FSD-RR-6) |
-| **Supportability / handover** | Operating and support model agreed; runbook accepted by operators; training delivered where needed |
+| **Supportability / handover** | Operating and support model agreed; runbook accepted by operators; training delivered where needed; **continuity** assured — operating knowledge captured, not reliant on a single person |
 | **Cost / licensing** | Licences in place; ongoing run-cost confirmed and owned |
 
 **Outcomes:**
@@ -170,3 +173,5 @@ This process is reviewed annually by the Management System Owner, or sooner on a
 - FSD-FRM-03 — Service Acceptance Record
 - FitSD — Requirements (FSD-SD-1…6; SAC items map to FSD-SA and FSD-RR)
 - Change & Release capability (FSD-CH) — delivers the build changes
+- Run & Restore capability (FSD-RR) — runs the service and governs its end-of-life retirement (FSD-RR-7)
+- FitSD — Information Stores — the registers and records this process reads from and writes to

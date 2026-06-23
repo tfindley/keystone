@@ -3,10 +3,10 @@ title: FitSD — Framework Charter
 framework: FitSD
 document: Charter
 tier: 0
-version: 0.1
+version: 0.2
 status: draft
 owner: Tristan Findley
-date: 2026-06-16
+date: 2026-06-23
 tags:
   - fitsd
   - framework
@@ -18,7 +18,9 @@ tags:
 
 *Fit for Solution Development. Just enough process to take on the right work and ship it so it lasts.*
 
-> **v0.1 — the founding layer.** This is Tier 0: what FitSD is, and the model everything else hangs off. The testable requirements live next door in *FitSD — Requirements* (Tier 1). The lower tiers — capabilities, roles, templates, the maturity check — come after.
+> **TL;DR** — The founding document: what FitSD is, its principles, the five-capability model, the roles, and how you conform. Adopting FitSD? Read this first. Just want to try it? The Quickstart is faster.
+
+> **v0.2 — the founding layer.** This is Tier 0: what FitSD is, and the model everything else hangs off. The testable requirements live in *FitSD — Requirements* (Tier 1). The lower tiers — capabilities, roles, templates, the maturity check — come after.
 
 ## 1. What FitSD is
 
@@ -33,7 +35,7 @@ The name nods to **FitSM** (*Fit for Service Management*), the lightweight ITSM 
 FitSD doesn't compete with ITIL or ISO 20000. It's a smaller cut of the same cloth, for teams where the full thing would be overkill.
 
 | Framework     | Weight                              | FitSD's relationship                                                     |
-| ------------- | ----------------------------------- | --------------------------------------------------------------------------- |
+| ------------- | ----------------------------------- | ------------------------------------------------------------------------ |
 | ITIL 4        | Heavy, whole value chain            | FitSD borrows the lifecycle ideas, drops the breadth                     |
 | ISO/IEC 20000 | Certifiable standard                | FitSD requirements are a defensible subset                               |
 | FitSM         | Lightweight, ~14 processes, neutral | Closest cousin; FitSD is lighter still and **intake-first**              |
@@ -55,7 +57,7 @@ The rules that decide what makes the cut.
 
 ## 4. The capability model
 
-FitSD splits service management into five groups. A small team rarely needs a sixth.
+FitSD splits service management into five groups. A small team rarely needs more — the one likely sixth is supplier / supply-chain assurance (**FSD-SC**), planned for teams with genuine supply-chain exposure (it closes the NIS2 supply-chain gap; see the *Roadmap*).
 
 | Group                | Question it answers                     | Core capabilities                                                    |
 | -------------------- | --------------------------------------- | -------------------------------------------------------------------- |
@@ -74,20 +76,25 @@ flowchart LR
       D["Demand"] --> SD["Bring in<br/>FSD-SD"]
       SD --> CH["Change and release<br/>FSD-CH"]
       CH --> RR["Run and restore<br/>FSD-RR"]
-      RR --> Ret["Retire"]
+      RR --> Ret["End-of-life<br/>review"]
     end
     SD -.->|secure by design| SA["Secure and assure<br/>FSD-SA"]
     RR -.->|protect and assure| SA
 ```
 
-## 5. The six-tier document model
+## 5. The document model — Framework and Implementation
 
-Six tiers. The top two are the framework; the rest are how a given team puts it into practice.
+FitSD's documents sit in **two layers**:
+
+- **Framework (portable — Tiers 0–1).** What FitSD *is*: the Charter & vocabulary (Tier 0) and the Requirements (Tier 1). The same for every team.
+- **Implementation (per team — Tiers 2–5).** How a given team puts it into practice: Capabilities (2), Roles (3), Templates & registers (4), and the Maturity self-check (5). Yours to shape.
+
+The numbered **tiers** within each layer echo FitSM's numbered parts; the numbers are an index, not a ranking. The one hard line is between the Framework and your Implementation of it — the table lists the tiers, and the diagram below shows the same two-layer split.
 
 | Tier | Name                      | Purpose                                                          | Status                                          |
 | ---- | ------------------------- | ---------------------------------------------------------------- | ----------------------------------------------- |
-| 0    | **Charter & vocabulary**  | What FitSD is, its principles and model (this document)       | v0.1                                            |
-| 1    | **Requirements**          | Testable "shall" statements per capability — the auditable spine | v0.1                                            |
+| 0    | **Charter & vocabulary**  | What FitSD is, its principles and model (this document)       | v0.2                                            |
+| 1    | **Requirements**          | Testable "shall" statements per capability — the auditable spine | v0.2                                            |
 | 2    | **Capabilities**          | Process descriptions: objective + key activities                 | SD full process; cards for GV/CH/RR/SA         |
 | 3    | **Roles**                 | The role model (see §6)                                          | later                                           |
 | 4    | **Templates & registers** | Forms, registers, records used to run the capabilities           | Solution Development built (FSD-FRM-01/02/03) |

@@ -6,7 +6,7 @@ tier: 0
 type: reference (non-normative)
 status: living
 owner: "Tristan Findley"
-date: 2026-06-22
+date: 2026-06-23
 tags: [fitsd, definitions, glossary]
 ---
 
@@ -49,6 +49,16 @@ tags: [fitsd, definitions, glossary]
 **Incident profile.** What counts as an incident for a *specific* service — its triggers and severities — registered with the incident process. Defined at Service Acceptance.
 
 **Tier (0–5).** FitSD's document layers: 0 charter & vocabulary, 1 requirements, 2 capabilities, 3 roles, 4 templates, 5 maturity self-check. Tiers 0–1 are the framework; 2–5 are how a team implements it.
+
+**Demand register (pipeline).** The record of work in the front-door pipeline — proposed, parked, rejected and in-flight — giving the upcoming/in-flight view. Becomes the service register once work goes live. See *FitSD — Information Stores*.
+
+**Information store.** Any register or record set FitSD relies on, described by what it holds and who owns it — not by which tool holds it. Gathered in *FitSD — Information Stores*.
+
+**End-of-life (EOL) review.** The decision taken when a service reaches end of life (EOL/EOS, obsolescence, or no longer needed): **renew** (keep running), **replace** (function still needed — back through the front door as new demand), or **retire** (decommission). See FSD-RR-7.
+
+**Retirement (decommission).** The controlled close-out of a service no longer needed: data handled, access revoked, SLAs withdrawn, documentation archived, the register updated, and operating knowledge captured. See FSD-RR-7.
+
+**Continuity (operational knowledge).** The assurance that a live service isn't reliant on a single person — its operating knowledge is captured and shared (cross-training, runbooks). Proven at Service Acceptance under supportability/handover.
 
 ## Common terms & acronyms
 
