@@ -17,6 +17,10 @@ Deferred ideas and improvements surfaced while building the framework, many from
 - **Tier 3 — Roles model.** Canonical role definitions, authority levels, and a light RACI across the five capabilities; reconciles Solution Owner (FSD-PRO §3) with Service Owner (Charter §6). Guidepost in the `Roadmap`.
 - **Tier 5 — Maturity self-check.** The 0–5 capability self-assessment described in the Charter (§7). Most of the content already exists in the cards' "Maturity, briefly" thumbnails. Guidepost in the `Roadmap`.
 
+## Principles
+
+- **Openness / honest disclosure (candidate principle).** Consider whether FitSD should state a value of being open about how a service is built and run — its tooling, dependencies, and methods (including AI assistance) — beyond the existing "documented & evidenced" bar. Surfaced while writing the site's AI-assisted disclosure: the page espouses openness, but FitSD's seven principles (Charter §3) don't name it. A deliberate call, not a quiet add — likely a normative change (see `Versioning Policy`).
+
 ## Capabilities
 
 - **FSD-SC — Supplier / supply-chain capability.** Requirements + reference, closing NIS2 21(2)(d) and mapping ISO 27001 A.5.19–A.5.22, FitSM PR8. Threads into Solution Development at Gate 2 (supplier assessment) and Service Acceptance.

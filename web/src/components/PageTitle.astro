@@ -1,0 +1,24 @@
+---
+// PageTitle used WHEN the versions plugin is loaded (≥1 frozen version): the standard's
+// title, the version notice (shown on frozen pages), and the Tier/status badges.
+// Starlight's page-title element id is the well-known "_top" (its in-page anchor target).
+import VersionNotice from "starlight-versions/components/VersionNotice.astro";
+import Badges from "./Badges.astro";
+const PAGE_TITLE_ID = "_top";
+---
+
+<h1 id={PAGE_TITLE_ID}>{Astro.locals.starlightRoute.entry.data.title}</h1>
+<VersionNotice />
+<Badges />
+
+<style>
+  @layer starlight.core {
+    h1 {
+      margin-top: 1rem;
+      font-size: var(--sl-text-h1);
+      line-height: var(--sl-line-height-headings);
+      font-weight: 600;
+      color: var(--sl-color-white);
+    }
+  }
+</style>

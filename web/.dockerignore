@@ -1,0 +1,12 @@
+node_modules
+dist
+.astro
+.vendored.json
+.git
+.github
+*.log
+Dockerfile
+.dockerignore
+docker-compose.yml
+README.md
+scripts/mobile-audit.mjs

@@ -1,0 +1,121 @@
+---
+title: "FSD-FRM-02 — Gate 2 Solution Design"
+description: "Form FSD-FRM-02 — the “is it ready to build?” gate."
+sidebar:
+  label: "Gate 2 · Solution Design"
+framework: "FitSD"
+tier: "4"
+status: "draft"
+# vendored from the canonical standard — do not edit here. Edit the repo-root .md.
+---
+
+> **Gate 2 asks: is it ready to build?** Refine the approved Gate 1 idea into a buildable, operable design. The design must state *how* each Service Acceptance Criterion (§5) will be met — those are proven later on FSD-FRM-03. The live copy is held in the team's work-tracking system; this is the blank template.
+
+## Header
+
+| Field                            | Entry                        |
+| -------------------------------- | ---------------------------- |
+| **Solution title**               |                              |
+| **Status**                       | Draft / Submitted / Approved |
+| **Solution Owner**               |                              |
+| **Contributors**                 |                              |
+| **Linked Gate 1 (FSD-FRM-01)** |                              |
+| **Date**                         |                              |
+
+## 1. Carry-forward from Gate 1
+
+*Summarise the approved Gate 1 — outcome sought, value, and effort — updated as more is now known.*
+
+| Field                       | Entry |
+| --------------------------- | ----- |
+| **Outcome / requirement**   |       |
+| **Value (recap)**           |       |
+| **Effort (recap, refined)** |       |
+
+## 2. Requirements
+
+*Functional and technical requirements as user stories, MoSCoW-rated (Must / Should / Could / Won't).*
+
+| #   | User story                  | MoSCoW |
+| --- | --------------------------- | ------ |
+| 1   | *As a … I want … so that …* |        |
+| 2   |                             |        |
+| 3   |                             |        |
+
+## 3. Architecture
+
+*Sketch the architecture and where it fits in the wider estate. Include a diagram, and show where security sits in it. Note any departures from the team's design principles.*
+
+> *Insert / link architecture diagram here.*
+
+| Field                      | Entry |
+| -------------------------- | ----- |
+| **Description**            |       |
+| **Security in the design** |       |
+| **Design exceptions**      |       |
+
+## 4. Operational impact
+
+| Integration point                        | Impact / approach |
+| ---------------------------------------- | ----------------- |
+| **Monitoring**                           |                   |
+| **Billing / chargeback** (if applicable) |                   |
+| **Service desk / ITSM**                  |                   |
+| **Environments** (dev / ongoing)         |                   |
+| **Process impact**                       | *Does this force changes to your change, incident or other operating processes? Note which capability — FSD-CH / FSD-RR / FSD-SA.* |
+
+## 5. Service Acceptance Criteria — design approach
+
+State *how* each criterion will be met. Each is proven later on FSD-FRM-03.
+
+| Criterion | Design approach |
+|---|---|
+| **Documentation** | *Which docs (HLD, runbook, recovery, user) and where they will live* |
+| **Backup (tested)** | *What is backed up, frequency, retention, location — and how a test restore will be proven* |
+| **Security** | *Hardening, patch path (FSD-RR), vulnerability posture, any exceptions (FSD-SA)* |
+| **Access** | *Access model — roles, least privilege, grant/revoke, admin control, JML handling* |
+| **Availability** | *Expected availability / SLO, capacity & scaling, DR considerations* |
+| **Monitoring & alerting** | *What is monitored, thresholds, where alerts route* |
+| **Incident profile** | *What counts as an incident for this service — triggers and severities — to register with the incident-management process* |
+| **Supportability / handover** | *Operating & support model, runbook, training needed; how continuity is assured — cross-training / knowledge capture so the service isn't reliant on one person* |
+| **Cost / licensing** | *Expected run-cost and licences* |
+
+## 6. RAIDD
+
+| Type           | Description |
+| -------------- | ----------- |
+| **Risk**       |             |
+| **Assumption** |             |
+| **Issue**      |             |
+| **Dependency** |             |
+| **Decision**   |             |
+
+## 7. Refined effort, cost and timeline
+
+*Keep proportionate: person-days by role/workstream and a short milestone list — not a full FTE/capacity model (only reach for that under genuine resource contention).*
+
+### 7.1 Effort and cost
+
+| Category   | Estimate                            | Working / evidence        |
+| ---------- | ----------------------------------- | ------------------------- |
+| **People** | *person-days, by role / workstream* |                           |
+| **CAPEX**  |                                     | *purchase / one-off*      |
+| **OPEX**   |                                     | *ongoing run / licensing* |
+
+### 7.2 Milestones
+
+| Milestone | Target date | Owner |
+| --------- | ----------- | ----- |
+|           |             |       |
+|           |             |       |
+
+## 8. Sign-off
+
+Sign-off authorises progression to delivery. Build and deployment changes are then raised through Change & Release (FSD-CH).
+
+| Field          | Entry                          |
+| -------------- | ------------------------------ |
+| **Decision**   | Approved for delivery / Rework |
+| **Approver**   |                                |
+| **Conditions** |                                |
+| **Date**       |                                |

@@ -1,0 +1,7 @@
+# FitSD website security contact (RFC 9116). Report vulnerabilities here.
+Contact: https://github.com/tfindley/keystone/security/advisories/new
+Contact: https://github.com/tfindley/keystone/issues
+Expires: 2027-06-23T00:00:00Z
+Policy: https://github.com/tfindley/keystone/blob/main/SECURITY.md
+Canonical: https://fitsd.tfindley.dev/.well-known/security.txt
+Preferred-Languages: en

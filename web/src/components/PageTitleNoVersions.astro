@@ -1,0 +1,22 @@
+---
+// PageTitle used WHEN the versions plugin is NOT loaded (zero frozen versions yet — the
+// site is just "latest, live"). Title + Tier/status badges, no version notice. This avoids
+// importing VersionNotice, whose virtual:starlight-versions-config only exists with the plugin.
+import Badges from "./Badges.astro";
+const PAGE_TITLE_ID = "_top";
+---
+
+<h1 id={PAGE_TITLE_ID}>{Astro.locals.starlightRoute.entry.data.title}</h1>
+<Badges />
+
+<style>
+  @layer starlight.core {
+    h1 {
+      margin-top: 1rem;
+      font-size: var(--sl-text-h1);
+      line-height: var(--sl-line-height-headings);
+      font-weight: 600;
+      color: var(--sl-color-white);
+    }
+  }
+</style>

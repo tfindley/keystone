@@ -1,0 +1,39 @@
+# Deploy on the host, behind your existing Traefik.
+#
+#   docker compose pull && docker compose up -d
+#
+# Adjust two things to match YOUR Traefik:
+#   • the external network name (here: "traefik")
+#   • the certresolver name (here: "letsencrypt")
+#
+# To build locally instead of pulling GHCR, swap `image:` for `build: .`.
+
+services:
+  fitsd-web:
+    image: ghcr.io/tfindley/fitsd-web:latest
+    container_name: fitsd-web
+    restart: unless-stopped
+    networks:
+      - traefik
+    healthcheck:
+      test: ["CMD", "wget", "-qO", "/dev/null", "http://127.0.0.1/healthz"]
+      interval: 30s
+      timeout: 3s
+      start_period: 5s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.fitsd-web.rule=Host(`fitsd.tfindley.dev`)"
+      - "traefik.http.routers.fitsd-web.entrypoints=websecure"
+      - "traefik.http.routers.fitsd-web.tls=true"
+      - "traefik.http.routers.fitsd-web.tls.certresolver=letsencrypt"
+      - "traefik.http.services.fitsd-web.loadbalancer.server.port=80"
+      - "traefik.http.services.fitsd-web.loadbalancer.healthcheck.path=/healthz"
+      - "traefik.http.services.fitsd-web.loadbalancer.healthcheck.interval=30s"
+      - "traefik.http.services.fitsd-web.loadbalancer.healthcheck.timeout=3s"
+      - "com.centurylinklabs.watchtower.enable=true"
+
+networks:
+  traefik:
+    external: true
