@@ -21,6 +21,8 @@ desktop.ini
 # Node (in case tooling is added later)
 node_modules/
 package-lock.json
+# ...except the web app's lockfile — it IS committed (npm ci and CI need it)
+!web/package-lock.json
 npm-debug.log*
 
 # Build / render artefacts
