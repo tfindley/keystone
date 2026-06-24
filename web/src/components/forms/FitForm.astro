@@ -1,0 +1,110 @@
+---
+// Renders a FormSchema to an interactive form. Fully DOM-driven: all metadata the client
+// needs (labels, types, absolute links back to the standard, version) is emitted as data-*
+// attributes, so no schema ships to the browser. See ../../lib/forms/README.md.
+import type { FormSchema } from "../../lib/forms/schema";
+import Field from "./Field.astro";
+import { SITE } from "../../../content.manifest.mjs";
+import versionData from "../../generated/version.json" with { type: "json" };
+
+const { schema } = Astro.props as { schema: FormSchema };
+const version = versionData.version;
+const canonicalUrl = `${SITE.url}/${schema.canonicalSlug}/`;
+const references = (schema.references ?? []).map((r) => ({ label: r.label, url: `${SITE.url}/${r.slug}/` }));
+---
+
+<form
+  class="fitform"
+  data-fitform
+  data-slug={schema.id}
+  data-title={schema.title}
+  data-frmid={schema.frmId}
+  data-version={version}
+  data-canonical-url={canonicalUrl}
+  data-references={JSON.stringify(references)}
+>
+  <p class="fitform-intro">{schema.intro}</p>
+  <p class="fitform-canonical">
+    Mirrors the canonical <a href={canonicalUrl}>{schema.frmId || "Idea Brief"}</a> (FitSD v{version}). The
+    canonical form is the authority — review your output before use. <strong>Nothing is saved</strong>; download or
+    print before you leave.
+  </p>
+
+  {
+    schema.sections.map((section) => (
+      <section class="fitform-section" data-section={section.title}>
+        <h2>{section.title}</h2>
+        {section.note && <p class="fitform-note">{section.note}</p>}
+        {section.help && <p class="fitform-help">{section.help}</p>}
+
+        {section.fields && section.fields.map((f) => <Field field={f} />)}
+
+        {section.repeatable && (
+          <div class="fitform-repeatable" data-repeatable data-id={section.repeatable.id} data-noun={section.repeatable.itemNoun}>
+            <div class="fitform-rows" data-rows>
+              <div class="fitform-row" data-row>
+                {section.repeatable.columns.map((col) => (
+                  <div class="fitform-col" data-col={col.name} data-label={col.label} data-type={col.type}>
+                    <label>{col.label}</label>
+                    {col.type === "textarea" && <textarea data-input rows="2" />}
+                    {col.type === "checkbox" && <input type="checkbox" data-input />}
+                    {col.type === "select" && (
+                      <select data-input>
+                        <option value="">—</option>
+                        {(col.options ?? []).map((o) => (
+                          <option value={o}>{o}</option>
+                        ))}
+                      </select>
+                    )}
+                    {(col.type === "text" || col.type === "date" || col.type === "number") && <input type={col.type} data-input />}
+                    {col.help && <p class="fitform-fieldhelp">{col.help}</p>}
+                  </div>
+                ))}
+                <button type="button" class="fitform-removerow" data-removerow aria-label="Remove this row">Remove</button>
+              </div>
+            </div>
+            <button type="button" class="fitform-addrow" data-addrow>+ Add {section.repeatable.itemNoun}</button>
+          </div>
+        )}
+
+        {section.criteria && (
+          <div class="fitform-criteria" data-criteria data-id={section.criteria.id}>
+            {section.criteria.rows.map((row) => (
+              <div class="fitform-criterion" data-criterion data-name={row.name} data-label={row.label}>
+                <div class="fitform-criterion-head">
+                  <strong>{row.label}</strong>
+                  {row.help && <p class="fitform-fieldhelp">{row.help}</p>}
+                </div>
+                <div class="fitform-criterion-inputs">
+                  <label class="fitform-evidence">
+                    Evidence / link
+                    <textarea data-evidence rows="2" />
+                  </label>
+                  <label class="fitform-met">
+                    Met?
+                    <select data-met>
+                      <option value="">—</option>
+                      <option value="Y">Y</option>
+                      <option value="N">N</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    ))
+  }
+
+  <div class="fitform-actions">
+    <button type="button" class="fitform-btn fitform-btn-primary" data-action="download-md">Download .md</button>
+    <button type="button" class="fitform-btn" data-action="print">Print / Save as PDF</button>
+    <button type="button" class="fitform-btn fitform-btn-ghost" data-action="reset">Clear</button>
+  </div>
+</form>
+
+<script>
+  import { initFitForms } from "./form.client.ts";
+  initFitForms();
+</script>

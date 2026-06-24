@@ -1,0 +1,280 @@
+/* Interactive Solution Development forms. Screen layout reuses the brand tokens from
+   fitsd.css; the @media print block produces a clean A4 record (note 4) with the standard
+   links embedded (note 1). */
+
+.fitform {
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.fitform-intro {
+  font-size: 1.05rem;
+  color: var(--sl-color-gray-2);
+}
+
+.fitform-canonical {
+  font-size: 0.9rem;
+  border-inline-start: 3px solid var(--sl-color-accent);
+  background: color-mix(in srgb, var(--sl-color-accent-low) 55%, transparent);
+  border-radius: 0 0.4rem 0.4rem 0;
+  padding: 0.6rem 0.9rem;
+  margin-block: 0.8rem 2rem;
+}
+
+.fitform h2 {
+  font-family: var(--fitsd-font-display, serif);
+  font-weight: 560;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  margin-block: 2rem 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--sl-color-hairline);
+}
+
+.fitform-section {
+  margin-block: 1.5rem;
+}
+.fitform-help {
+  font-size: 0.86rem;
+  color: var(--sl-color-gray-3);
+  margin-block: 0.2rem 1rem;
+}
+.fitform-note {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sl-color-text-accent);
+  margin: 0;
+}
+
+/* fields */
+.fitform-field {
+  margin-block: 0.9rem;
+}
+.fitform-field > label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 0.3rem;
+}
+.fitform-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.fitform input[type="text"],
+.fitform input[type="date"],
+.fitform input[type="number"],
+.fitform textarea,
+.fitform select {
+  width: 100%;
+  font: inherit;
+  color: var(--sl-color-white);
+  background: var(--sl-color-bg-sidebar);
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 0.4rem;
+  padding: 0.45rem 0.6rem;
+}
+.fitform textarea {
+  resize: vertical;
+}
+.fitform input:focus,
+.fitform textarea:focus,
+.fitform select:focus {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 1px;
+}
+.fitform-fieldhelp {
+  font-size: 0.8rem;
+  color: var(--sl-color-gray-3);
+  margin: 0.25rem 0 0;
+}
+.fitform-hidden {
+  display: none !important;
+}
+
+/* repeatable rows */
+.fitform-repeatable {
+  margin-block: 0.8rem;
+}
+.fitform-row {
+  display: grid;
+  gap: 0.6rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  align-items: end;
+  padding: 0.9rem;
+  margin-block: 0.6rem;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--sl-color-bg-sidebar) 50%, transparent);
+}
+.fitform-col label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.fitform-col input,
+.fitform-col textarea,
+.fitform-col select {
+  width: 100%;
+}
+.fitform-removerow {
+  align-self: end;
+}
+
+/* criteria (Service Acceptance) */
+.fitform-criterion {
+  padding: 0.9rem;
+  margin-block: 0.6rem;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 0.5rem;
+}
+.fitform-criterion-head strong {
+  font-size: 0.95rem;
+}
+.fitform-criterion-inputs {
+  display: grid;
+  grid-template-columns: 1fr 6rem;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+.fitform-criterion-inputs label {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* buttons */
+.fitform-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block: 2rem 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--sl-color-hairline);
+}
+.fitform-btn {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--sl-color-accent);
+  background: transparent;
+  color: var(--sl-color-text-accent);
+}
+.fitform-btn-primary {
+  background: var(--sl-color-accent);
+  color: var(--sl-color-black);
+}
+.fitform-btn-ghost {
+  border-color: var(--sl-color-hairline);
+  color: var(--sl-color-gray-2);
+}
+.fitform-addrow {
+  font: inherit;
+  cursor: pointer;
+  background: transparent;
+  border: 1px dashed var(--sl-color-hairline);
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  color: var(--sl-color-text-accent);
+}
+.fitform-removerow {
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  color: var(--sl-color-gray-2);
+}
+
+/* The typeset print/PDF document is built on demand (form.client.ts) and shown only when
+   printing — we print THAT, not the live form, so the PDF reads as a clean document. */
+.fitform-print {
+  display: none;
+}
+
+/* ---- print / Save as PDF (A4) ---- */
+@media print {
+  @page {
+    size: A4;
+    margin: 18mm 16mm;
+  }
+  /* print only the generated document — hide the live form and all site chrome */
+  body > *:not(.fitform-print) {
+    display: none !important;
+  }
+  .fitform-print {
+    display: block;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  .fitform-print h1 {
+    font-family: var(--fitsd-font-display, Georgia, serif);
+    font-size: 20pt;
+    margin: 0 0 0.2rem;
+  }
+  .fitform-print h2 {
+    font-family: var(--fitsd-font-display, Georgia, serif);
+    font-size: 13pt;
+    margin: 1.1rem 0 0.4rem;
+    padding-bottom: 0.15rem;
+    border-bottom: 1px solid #ccc;
+    break-after: avoid;
+  }
+  .fitform-print-meta,
+  .fitform-print-refs {
+    font-size: 9pt;
+    color: #444;
+    margin: 0 0 0.15rem;
+  }
+  .fitform-print-meta a,
+  .fitform-print-refs a {
+    color: #444;
+  }
+  .fitform-print-note {
+    font-size: 9pt;
+    font-style: italic;
+    color: #666;
+    margin: 0 0 0.4rem;
+  }
+  .fitform-print dl {
+    margin: 0 0 0.6rem;
+    break-inside: avoid;
+  }
+  .fitform-print dt {
+    font-weight: 700;
+    font-size: 9.5pt;
+    margin-top: 0.45rem;
+  }
+  .fitform-print dd {
+    margin: 0;
+    white-space: pre-wrap;
+  }
+  .fitform-print table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.3rem 0 0.8rem;
+    font-size: 9.5pt;
+  }
+  .fitform-print th,
+  .fitform-print td {
+    border: 1px solid #bbb;
+    padding: 0.3rem 0.4rem;
+    text-align: left;
+    vertical-align: top;
+    white-space: pre-wrap;
+  }
+  .fitform-print thead {
+    display: table-header-group;
+  }
+  .fitform-print tr {
+    break-inside: avoid;
+  }
+}

@@ -88,7 +88,7 @@ export default defineConfig({
       editLink: {
         baseUrl: `${SITE.repo}/edit/main/`,
       },
-      customCss: ["./src/styles/fitsd.css"],
+      customCss: ["./src/styles/fitsd.css", "./src/styles/forms.css"],
     }),
   ],
 });
