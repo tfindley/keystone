@@ -1,0 +1,38 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { formList } from "../../lib/forms";
+---
+
+<StarlightPage
+  frontmatter={{
+    title: "Interactive forms",
+    description:
+      "Fill in the FitSD Solution Development artifacts — Idea Brief, Gate 1, Gate 2 and the Service Acceptance Record — in your browser, with inline help, and download a Markdown record or print to PDF.",
+    tableOfContents: false,
+  }}
+>
+  <p>
+    These are interactive versions of the FitSD Solution Development artifacts. Fill one in, with the canonical
+    guidance shown inline as help, then <strong>download a Markdown record</strong> or <strong>print / save to PDF</strong>.
+    Each form mirrors its canonical document, which remains the authority.
+  </p>
+
+  <p>
+    <strong>Nothing is saved.</strong> The forms run entirely in your browser — there's no account and no server
+    storage. Download or print your work before you leave the page. (Saving and carrying a record across the
+    process may come later.)
+  </p>
+
+  <ul>
+    {
+      formList.map((f) => (
+        <li>
+          <a href={`/forms/${f.id}/`}>
+            <strong>{f.title}</strong>
+          </a>{" "}
+          — {f.intro} {f.frmId && (<>Mirrors <a href={`/${f.canonicalSlug}/`}>{f.frmId}</a>.</>)}
+        </li>
+      ))
+    }
+  </ul>
+</StarlightPage>

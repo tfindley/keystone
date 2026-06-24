@@ -18,6 +18,10 @@ const pages = [
   "/reference/diagrams/",
   "/adoption/positioning/",
   "/compliance/security/",
+  "/forms/",
+  "/forms/gate-1/",
+  "/forms/gate-2/",
+  "/forms/acceptance/",
 ];
 
 const browser = await chromium.launch();

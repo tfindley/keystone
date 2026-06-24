@@ -156,6 +156,17 @@ export const NAV = [
     ],
   },
   {
+    group: "Forms",
+    items: [
+      // Interactive tools (custom pages under /forms/), not vendored content — hence `link`.
+      { link: "/forms/", label: "About these forms" },
+      { link: "/forms/idea-brief/", label: "Idea Brief" },
+      { link: "/forms/gate-1/", label: "Gate 1 — Outline Proposal" },
+      { link: "/forms/gate-2/", label: "Gate 2 — Solution Design" },
+      { link: "/forms/acceptance/", label: "Service Acceptance Record" },
+    ],
+  },
+  {
     group: "Reference",
     items: [
       {
@@ -241,8 +252,13 @@ export function vendoredItems() {
 }
 
 // Transform the manifest into a Starlight sidebar config (groups, nesting, labels).
+// Leaves are either content pages (`slug`) or custom-page links (`link`, e.g. the forms).
 export function sidebar() {
   const toItem = (n) =>
-    n.items ? { label: n.group, items: n.items.map(toItem) } : { label: n.label, slug: n.slug };
+    n.items
+      ? { label: n.group, items: n.items.map(toItem) }
+      : n.link
+        ? { label: n.label, link: n.link }
+        : { label: n.label, slug: n.slug };
   return NAV.map(toItem);
 }

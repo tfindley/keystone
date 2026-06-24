@@ -1,0 +1,15 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import FitForm from "../../components/forms/FitForm.astro";
+import { forms } from "../../lib/forms";
+
+export function getStaticPaths() {
+  return Object.values(forms).map((f) => ({ params: { slug: f.id }, props: { schema: f } }));
+}
+
+const { schema } = Astro.props;
+---
+
+<StarlightPage frontmatter={{ title: schema.title, description: schema.intro, tableOfContents: false }}>
+  <FitForm schema={schema} />
+</StarlightPage>

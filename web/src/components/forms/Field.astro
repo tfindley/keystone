@@ -1,0 +1,54 @@
+---
+// One labelled input + inline help, for a normal (non-repeatable) form field.
+// Carries data-* so the client can read its label/type and apply conditional visibility.
+import type { Field } from "../../lib/forms/schema";
+const { field } = Astro.props as { field: Field };
+const id = `f-${field.name}`;
+---
+
+<div
+  class="fitform-field"
+  data-field
+  data-name={field.name}
+  data-label={field.label}
+  data-type={field.type}
+  data-show-when-field={field.showWhen?.field}
+  data-show-when-equals={field.showWhen?.equals}
+>
+  {
+    field.type === "checkbox" ? (
+      <label class="fitform-checkbox">
+        <input type="checkbox" id={id} name={field.name} />
+        <span>{field.label}</span>
+      </label>
+    ) : (
+      <label for={id}>{field.label}</label>
+    )
+  }
+
+  {field.type === "textarea" && <textarea id={id} name={field.name} rows="3" placeholder={field.placeholder} />}
+  {
+    field.type === "select" && (
+      <select id={id} name={field.name}>
+        <option value="">—</option>
+        {(field.options ?? []).map((o) => (
+          <option value={o}>{o}</option>
+        ))}
+      </select>
+    )
+  }
+  {
+    (field.type === "text" || field.type === "date" || field.type === "number") && (
+      <input
+        type={field.type}
+        id={id}
+        name={field.name}
+        placeholder={field.placeholder}
+        min={field.min}
+        max={field.max}
+      />
+    )
+  }
+
+  {field.help && <p class="fitform-fieldhelp">{field.help}</p>}
+</div>
