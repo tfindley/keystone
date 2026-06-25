@@ -78,6 +78,8 @@ export default defineConfig({
         PageTitle: frozenVersions.length
           ? "./src/components/PageTitle.astro"
           : "./src/components/PageTitleNoVersions.astro",
+        // Append a lightweight CC BY 4.0 licence line under the default footer.
+        Footer: "./src/components/Footer.astro",
       },
       social: [
         { icon: "github", label: "GitHub", href: SITE.repo },

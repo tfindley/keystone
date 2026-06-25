@@ -98,6 +98,30 @@ h1#_top,
   letter-spacing: 0.01em;
 }
 
+/* --- licence line appended to the footer (component override) --- */
+.fitsd-license {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--sl-color-hairline);
+  text-align: center;
+  font-size: 0.82rem;
+}
+.fitsd-license a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--sl-color-gray-3);
+  text-decoration: none;
+}
+.fitsd-license a:hover {
+  color: var(--sl-color-text-accent);
+}
+.fitsd-license .cc-badge {
+  height: 1.15rem;
+  width: auto;
+  flex: none;
+}
+
 /* --- per-page metadata badge (Tier / status) injected via a component override --- */
 .fitsd-badges {
   display: flex;
