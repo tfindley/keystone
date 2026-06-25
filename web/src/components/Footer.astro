@@ -1,0 +1,23 @@
+---
+// Footer override: render Starlight's default footer (pagination, last-updated, edit link),
+// then append a lightweight licence line. The CC BY mark is an inline SVG using
+// `currentColor` — self-hosted (no external request, CSP-clean) and it follows dark/light.
+// This renders on every page, including the splash/home — so the home carries the licence
+// both here and in its closing prose (intentional: a reader may never reach the footer).
+import Default from "@astrojs/starlight/components/Footer.astro";
+---
+
+<Default />
+
+<div class="fitsd-license">
+  <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">
+    <svg class="cc-badge" viewBox="0 0 44 20" role="img" aria-label="CC BY 4.0" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.4" />
+      <text x="10" y="13.4" text-anchor="middle" font-size="9.5" font-weight="700" font-family="system-ui, sans-serif">cc</text>
+      <circle cx="34" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.4" />
+      <circle cx="34" cy="7" r="2" />
+      <path d="M30.3 15.4 q3.7 -4.6 7.4 0 z" />
+    </svg>
+    <span>FitSD is released under CC BY 4.0</span>
+  </a>
+</div>

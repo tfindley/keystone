@@ -1,5 +1,9 @@
 # FitSD
 
+[![Web](https://github.com/tfindley/keystone/actions/workflows/web.yml/badge.svg)](https://github.com/tfindley/keystone/actions/workflows/web.yml)
+[![Web CI](https://github.com/tfindley/keystone/actions/workflows/web-ci.yml/badge.svg)](https://github.com/tfindley/keystone/actions/workflows/web-ci.yml)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 > **In one line.** FitSD is just enough process for a small team to take on the right work and ship it so it lasts — one front door for new work, and a "done" that means *operable*, not merely running.
 
 Small teams can't run ITIL — it assumes a department and a budget for process nobody has. But they still have to decide what's worth building, design it so it can actually be run, and avoid the 2 a.m. call-out for something nobody wrote down. FitSD is the smallest amount of that discipline a handful of people can keep up. New work enters through one front door with two quick decision gates — *is this worth doing?* then *is it ready to build?* — and nothing goes live until it's proven ready: documented, recoverable, secure, monitored, supportable. It keeps what ITIL, ISO 20000 and FitSM get right, and drops everything a small team can't sustain.
