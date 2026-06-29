@@ -1,7 +1,7 @@
 /* FitSD brand layer over Starlight.
    Aesthetic: editorial-institutional — a citable standard, not a SaaS landing.
-   Warm paper / deep ink, a single confident pine-green "go / ready" accent, and the
-   FitSD codes (FSD-GV, Tier 0) treated as a typographic motif. Fonts self-hosted. */
+   Warm paper / deep ink, a single confident ink-blue accent, and the FitSD codes
+   (FSD-GV, Tier 0) treated as a typographic motif. Fonts self-hosted. */
 
 /* --- self-hosted fonts (no external requests; keeps CSP 'self') --- */
 @import "@fontsource-variable/fraunces/standard.css";
@@ -18,24 +18,24 @@
   --sl-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
   --fitsd-font-display: "Fraunces Variable", Fraunces, Georgia, "Times New Roman", serif;
 
-  /* Dark theme (Starlight's default). Pine accent, brightened for contrast on ink. */
-  --sl-color-accent-low: #0f2419;
-  --sl-color-accent: #2f7d57;
-  --sl-color-accent-high: #a9e3c2;
-  --sl-color-text-accent: #6fd29f;
+  /* Dark theme (Starlight's default). Ink-blue accent, brightened for contrast on ink. */
+  --sl-color-accent-low: #0e2030;
+  --sl-color-accent: #2c5d86;
+  --sl-color-accent-high: #bcd9f0;
+  --sl-color-text-accent: #6db0e6;
 
-  /* a touch warmer ink than pure slate */
-  --sl-color-bg: #0d1310;
-  --sl-color-bg-nav: #0d1310f2;
-  --sl-color-bg-sidebar: #0b100d;
+  /* deep blue-neutral ink (a touch cooler than slate) */
+  --sl-color-bg: #0c1117;
+  --sl-color-bg-nav: #0c1117f2;
+  --sl-color-bg-sidebar: #0a0e14;
 }
 
-/* Light theme — warm paper, deep pine for accents/links. */
+/* Light theme — warm paper, deep ink-blue for accents/links. */
 :root[data-theme="light"] {
-  --sl-color-accent-low: #d6ebdd;
-  --sl-color-accent: #2c7150;
-  --sl-color-accent-high: #123524;
-  --sl-color-text-accent: #1f5e3f;
+  --sl-color-accent-low: #d4e6f2;
+  --sl-color-accent: #2c5d86;
+  --sl-color-accent-high: #123048;
+  --sl-color-text-accent: #1f4d70;
 
   --sl-color-bg: #f7f3ea;
   --sl-color-bg-nav: #f7f3eaf2;
