@@ -3,7 +3,7 @@ title: FitSD — Framework Charter
 framework: FitSD
 document: Charter
 tier: 0
-version: 0.2
+version: 0.3
 status: draft
 owner: Tristan Findley
 date: 2026-06-23
@@ -87,7 +87,7 @@ flowchart LR
 FitSD's documents sit in **two layers**:
 
 - **Framework (portable — Tiers 0–1).** What FitSD *is*: the Charter & vocabulary (Tier 0) and the Requirements (Tier 1). The same for every team.
-- **Implementation (per team — Tiers 2–5).** How a given team puts it into practice: Capabilities (2), Roles (3), Templates & registers (4), and the Maturity self-check (5). Yours to shape.
+- **Implementation (per team — Tiers 2–5).** How a given team puts it into practice: Capabilities (2), Roles (3), Templates & registers (4), and the Maturity self-check (5). Yours to shape. *(New adopters: FitSD — Implementation Guide walks standing all of this up.)*
 
 The numbered **tiers** within each layer echo FitSM's numbered parts; the numbers are an index, not a ranking. The one hard line is between the Framework and your Implementation of it — the table lists the tiers, and the diagram below shows the same two-layer split.
 
@@ -97,7 +97,7 @@ The numbered **tiers** within each layer echo FitSM's numbered parts; the number
 | 1    | **Requirements**          | Testable "shall" statements per capability — the auditable spine | v0.2                                            |
 | 2    | **Capabilities**          | Process descriptions: objective + key activities                 | SD full process; cards for GV/CH/RR/SA         |
 | 3    | **Roles**                 | The role model (see §6)                                          | later                                           |
-| 4    | **Templates & registers** | Forms, registers, records used to run the capabilities           | Solution Development built (FSD-FRM-01/02/03) |
+| 4    | **Templates & registers** | Forms, registers, records used to run the capabilities           | Solution Development built (FSD-FRM-00–03) |
 | 5    | **Maturity self-check**   | A 0–5 capability self-assessment (see §7)                        | later                                           |
 
 ```mermaid

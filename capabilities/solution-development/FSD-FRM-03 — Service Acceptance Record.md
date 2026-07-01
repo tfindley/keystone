@@ -4,7 +4,7 @@ framework: FitSD
 document_id: FSD-FRM-03
 capability: Solution Development
 tier: 4
-version: 0.2
+version: 0.3
 status: draft
 owner: Management System Owner
 approver: Approver
@@ -36,7 +36,7 @@ tags:
 
 ## 1. Acceptance criteria
 
-For each criterion, record the evidence (a link, a date, a reference) and whether it is met.
+For each criterion, record the evidence (a link, a date, a reference) and whether it meets your organisation's **standing SAC baseline** — the criteria are defined once in *FitSD — Service Acceptance Criteria*; below is what *proof* looks like at acceptance.
 
 | Criterion | Evidence / link | Met? (Y/N) |
 |---|---|---|

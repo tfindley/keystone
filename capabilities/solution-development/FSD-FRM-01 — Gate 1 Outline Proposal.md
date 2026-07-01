@@ -4,7 +4,7 @@ framework: FitSD
 document_id: FSD-FRM-01
 capability: Solution Development
 tier: 4
-version: 0.2
+version: 0.3
 status: draft
 owner: Management System Owner
 approver: Approver
@@ -30,9 +30,12 @@ tags:
 | **Status**         | Draft / Submitted / Approved      |
 | **Solution Owner** | *(accountable for this solution)* |
 | **Contributors**   |                                   |
+| **Linked Idea Brief (FSD-FRM-00)** | *(if one was raised)* |
 | **Date**           |                                   |
 
 ## 1. Idea
+
+*Carry forward from the Idea Brief (FSD-FRM-00) where one was raised — confirmed and firmed up as more is now known. If the work entered here directly, complete it fresh.*
 
 | Field                     | Entry                                                                                                                                                      |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |

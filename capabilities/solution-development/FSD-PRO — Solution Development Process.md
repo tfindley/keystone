@@ -4,7 +4,7 @@ framework: FitSD
 document_id: FSD-PRO
 capability: Solution Development
 tier: 2
-version: 0.2
+version: 0.3
 status: draft
 owner: Management System Owner
 approver: Approver
@@ -65,7 +65,9 @@ It uses **two decision gates** at the front and a **Service Acceptance** close-o
 
 **Proof of Concept (PoC).** A time-boxed, low-cost experiment to resolve genuine feasibility uncertainty. Identified at Gate 1 and, where required, completed before Gate 2 is submitted.
 
-**Service Acceptance Criteria (SAC).** The standard Definition of Done for any solution delivered through this process — the operational outputs in §7 (the Definition of Done) that must exist alongside the product itself.
+**Service Acceptance Criteria (SAC).** The standard Definition of Done for any solution delivered through this process — the operational outputs that must exist alongside the product itself. The categories are defined, and an organisation's standing baseline is ratified, in *FitSD — Service Acceptance Criteria*; they are proven at §7.
+
+**Idea Brief.** The optional one-page intake (FSD-FRM-00) raised before Gate 1 to decide whether an idea is worth a proper look. It carries forward into Gate 1 and designs nothing.
 
 **Net-new.** Work meeting any of the in-scope triggers in §1; the test that distinguishes Solution Development work from a routine change.
 
@@ -87,7 +89,7 @@ A single person may hold more than one role, but accountability for any one solu
 
 ```mermaid
 flowchart LR
-    Demand["Demand /<br/>Idea Brief"] --> G1{"Gate 1<br/>worth doing?"}
+    Demand["Demand /<br/>Idea Brief (FRM-00)"] --> G1{"Gate 1<br/>worth doing?"}
     G1 -->|reject| Rej["Rejected"]
     G1 -->|park| Park["Parked"]
     G1 -->|PoC first| PoC["Proof of<br/>Concept"]
@@ -101,9 +103,9 @@ flowchart LR
     SA -->|accepted| Live["Live service<br/>register entry + owner"]
 ```
 
-The lifecycle runs Idea → Gate 1 → optional PoC → Gate 2 → Delivery → Service Acceptance → In service. Each gate has explicit outcomes (§5–§7). Once Gate 2 is approved, delivery is run as a project and the build and deployment changes are raised and controlled through Change & Release (FSD-CH). The solution is only accepted into service once the Service Acceptance Criteria are evidenced.
+The lifecycle runs **Idea Brief** (FSD-FRM-00) → Gate 1 → optional PoC → Gate 2 → Delivery → Service Acceptance → In service. The Idea Brief is an optional one-page intake that carries forward into Gate 1; each gate has explicit outcomes (§5–§7). Once Gate 2 is approved, delivery is run as a project and the build and deployment changes are raised and controlled through Change & Release (FSD-CH). The solution is only accepted into service once the Service Acceptance Criteria are evidenced against the organisation's standing baseline.
 
-**System of record.** Live gate records, the delivery project, and the Service Acceptance checklist are held in the team's project / work-tracking system. The framework holds this process and the blank form templates only (FSD-FRM-01/02/03).
+**System of record.** Live intake, gate and acceptance records — and the delivery project — are held in the team's project / work-tracking system. The framework holds this process and the blank form templates only (FSD-FRM-00–03). *(FSD-FRM-00 is the optional pre-gate intake; 01–03 are the two gates and the acceptance record.)*
 
 ---
 
@@ -111,7 +113,7 @@ The lifecycle runs Idea → Gate 1 → optional PoC → Gate 2 → Delivery → 
 
 **Purpose.** Decide whether the idea is worth pursuing before any design effort is spent.
 
-**What is captured** (on FSD-FRM-01): the idea and the customer or business need; the benefits; the **primary driver** (value, compliance, or risk reduction); a light value score across four plain lenses (growth, retention, efficiency, and risk/compliance) — noting that compliance- and risk-driven work is justified by impact and the cited obligation rather than the value total; a T-shirt estimate of effort; the impact of doing nothing, why now, and when the case expires; the feasible delivery options; and — where feasibility is still in doubt — an optional Proof of Concept defining its objective, success criteria, method, cost and duration — and, where a vendor or product is involved, its licensing and upgrade path.
+**What is captured** (on FSD-FRM-01, carried forward from the Idea Brief where one was raised): the idea and the customer or business need; the benefits; the **primary driver** (value, compliance, or risk reduction); a light value score across four plain lenses (growth, retention, efficiency, and risk/compliance) — noting that compliance- and risk-driven work is justified by impact and the cited obligation rather than the value total; a T-shirt estimate of effort; the impact of doing nothing, why now, and when the case expires; the feasible delivery options; and — where feasibility is still in doubt — an optional Proof of Concept defining its objective, success criteria, method, cost and duration — and, where a vendor or product is involved, its licensing and upgrade path.
 
 **Outcomes:**
 
@@ -137,7 +139,7 @@ The lifecycle runs Idea → Gate 1 → optional PoC → Gate 2 → Delivery → 
 
 ## §7 Service Acceptance
 
-**Purpose.** Confirm the solution is ready to run before it is accepted into service. The outputs of this process are the product itself **plus** the operational artefacts below that make it supportable. Each is *designed* at Gate 2 and *proven* here, on FSD-FRM-03, with evidence.
+**Purpose.** Confirm the solution is ready to run before it is accepted into service. The outputs of this process are the product itself **plus** the operational artefacts below that make it supportable. The criteria are defined once in *FitSD — Service Acceptance Criteria* and proven here against the organisation's standing baseline (FSD-GV-7). Each is *designed* at Gate 2 and *proven* here, on FSD-FRM-03, with evidence.
 
 | Criterion | Proven at acceptance |
 |---|---|
@@ -160,7 +162,7 @@ The lifecycle runs Idea → Gate 1 → optional PoC → Gate 2 → Delivery → 
 
 ## §8 Records and Review
 
-Live gate records, the delivery project, and the Service Acceptance checklist are held in the team's project / work-tracking system and are the authoritative record of any individual solution's progress. The framework holds this process and the blank form templates (FSD-FRM-01/02/03).
+The live records (§4, *System of record*) are the authoritative record of any individual solution's progress.
 
 This process is reviewed annually by the Management System Owner, or sooner on a material change to how the team takes on new work, and re-approved by the Approver.
 
@@ -168,10 +170,12 @@ This process is reviewed annually by the Management System Owner, or sooner on a
 
 ## §9 Related Documents
 
+- FSD-FRM-00 — Idea Brief
 - FSD-FRM-01 — Gate 1 Outline Proposal
 - FSD-FRM-02 — Gate 2 Solution Design
 - FSD-FRM-03 — Service Acceptance Record
-- FitSD — Requirements (FSD-SD-1…6; SAC items map to FSD-SA and FSD-RR)
+- FitSD — Service Acceptance Criteria — where the SAC categories are defined and the standing baseline is ratified
+- FitSD — Requirements (FSD-SD-1…6, FSD-GV-7; SAC items map to FSD-SA and FSD-RR)
 - Change & Release capability (FSD-CH) — delivers the build changes
 - Run & Restore capability (FSD-RR) — runs the service and governs its end-of-life retirement (FSD-RR-7)
 - FitSD — Information Stores — the registers and records this process reads from and writes to

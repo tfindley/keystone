@@ -3,7 +3,7 @@ title: FitSD — Requirements
 framework: FitSD
 document: Requirements
 tier: 1
-version: 0.2
+version: 0.3
 status: draft
 owner: Tristan Findley
 date: 2026-06-23
@@ -42,6 +42,7 @@ The management system itself.
 | **FSD-GV-4** | A register of services, the demand pipeline, and key records **shall** be maintained and kept current, with completed and retired entries retained as the historical record.                                     | The system's index — the upcoming, in-flight and completed view. |
 | **FSD-GV-5** | The management system **shall** be reviewed at a defined cadence and improved (Plan-Do-Check-Act).                   | Continual improvement.                      |
 | **FSD-GV-6** | Roles **shall** be defined, including who may authorise what.                                                        | One person may hold several.                |
+| **FSD-GV-7** | The organisation **shall** define and **ratify a standing Service Acceptance baseline** — its own thresholds for each Service Acceptance Criterion — and apply it to every solution's Service Acceptance. | The SAC categories are fixed (FSD-SD-5); the *thresholds* are the organisation's, set once and inherited by every solution rather than rediscovered each time. Defined in *reference/FitSD — Service Acceptance Criteria*; stood up via *FitSD — Implementation Guide*. |
 
 ## FSD-SD — Bring in (Solution Development)
 
@@ -55,7 +56,7 @@ The front door. How net-new work enters and reaches live service — and the con
 | **FSD-SD-2** | A new service **shall** pass a value/feasibility decision before design begins.                                                                                                                                       | Gate 1 — "worth doing?"                          |
 | **FSD-SD-3** | A new service **shall** pass a design-readiness decision before delivery, covering how it will be operated.                                                                                                           | Gate 2 — "ready to build?"                       |
 | **FSD-SD-4** | Every new or materially changed service **shall** meet a defined Service Acceptance / Definition of Done before entering live service, **evidenced** rather than asserted.                                            | Readiness baked in.                              |
-| **FSD-SD-5** | Service Acceptance **shall**, as a minimum, cover: documentation; tested backup and recoverability; security; access control; availability; monitoring and alerting; service-level incident triggers; supportability, handover and continuity (operating knowledge captured, not reliant on a single person); and cost/licensing. | The Definition of Done (see FSD-PRO §7); the set may grow as practice matures. Incident triggers also satisfy FSD-RR-6. |
+| **FSD-SD-5** | Service Acceptance **shall**, as a minimum, cover: documentation; tested backup and recoverability; security; access control; availability; monitoring and alerting; service-level incident triggers; supportability, handover and continuity (operating knowledge captured, not reliant on a single person); and cost/licensing. | The Definition of Done — categories defined in *reference/FitSD — Service Acceptance Criteria*, proven at FSD-PRO §7. The set may grow as practice matures; thresholds are the organisation's standing baseline (FSD-GV-7). Incident triggers also satisfy FSD-RR-6. |
 | **FSD-SD-6** | Each gate and acceptance decision **shall** have a single accountable approver and be recorded.                                                                                                                       | Lightweight, single-approver by default.         |
 
 ## FSD-CH — Change & release
@@ -107,10 +108,12 @@ Staying safe and compliant.
 
 FitSD ships reference documents for its flagship **Solution Development** capability, which implementers may adopt and adapt:
 
+- **Idea Brief** form — the pre-Gate-1 intake (FSD-FRM-00).
 - **Solution Development Process** — the two-gate process plus Service Acceptance close-out (satisfies FSD-SD-1…6).
 - **Gate 1 — Outline Proposal** form.
 - **Gate 2 — Solution Design** form.
-- **Service Acceptance Record** — the Definition of Done (satisfies FSD-SD-5).
+- **Service Acceptance Record** — the Definition of Done (satisfies FSD-SD-4/5).
+- **Service Acceptance Criteria** (`reference/`) — where the SAC categories are defined and an organisation ratifies its standing baseline (supports FSD-GV-7).
 
 These are illustrative reference material, not part of the normative requirements above. An implementation conforms by meeting the requirements, however it chooses to document them.
 

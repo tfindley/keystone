@@ -53,6 +53,7 @@ flowchart TB
 | **Demand / pipeline register** | Proposed, parked, rejected and in-flight work — with driver, status and reasons | Solution Development → Govern (FSD-GV-4, FSD-SD-1) | Intake → delivery | FitSM PR1 (service portfolio); ITIL service portfolio |
 | **Gate records (Gate 1 / Gate 2)** | Per-item decisions, conditions and approver | Solution Development (FSD-SD-6; FRM-01/02) | Gates | ITIL service design records |
 | **Service Acceptance records** | Definition-of-Done evidence per service | Solution Development (FSD-SD-4/5; FRM-03) | Acceptance | ITIL service validation & testing |
+| **SAC baseline (standing)** | The organisation's ratified Service Acceptance thresholds, inherited by every solution | Govern (FSD-GV-7) | All | ISO 27001 7.5 (documented information) |
 | **Service register / catalogue** | Live services, named owner, status (incl. retired) | Govern (FSD-GV-2/4) | Live → retired | FitSM PR1; ITIL service catalogue |
 | **Document register / control** | Governing documents with owner, approver, review cycle | Govern (FSD-GV-3) | All | ISO 27001 7.5 (documented information) |
 | **Risk register** | Risks, treatment or formal acceptance, owner | Secure & Assure (FSD-SA-1) | All | ISO 27001 clause 6.1; FitSM PR6 |
@@ -76,4 +77,5 @@ Most of the above are implied by existing requirements. Two were missing and are
 - `FitSD — Requirements` — the requirements that mandate these stores (FSD-GV-4 especially)
 - `capabilities/govern/FSD-GV — Govern` — Govern owns the information model
 - `FitSD — Diagrams` §6 — the picture
+- `reference/FitSD — Service Acceptance Criteria` — where the SAC baseline store is defined and ratified
 - `reference/FitSD — Standards Alignment` — the FitSM / ITIL / ISO 27001 mappings these borrow from

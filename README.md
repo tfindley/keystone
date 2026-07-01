@@ -35,6 +35,7 @@ You don't need to read it all — pick your path:
 | `FitSD — Elevator Pitch & Executive Summary.md` | 0 | The short forms: a spoken pitch and a one-page summary for decision-makers |
 | `FitSD — Requirements.md`                  | 1    | The testable "shall" statements — the spine an auditor would check  |
 | `FitSD — Adoption & Positioning.md`        | 0    | Who it's for, why they'd adopt it, and how it fits by org size      |
+| `FitSD — Implementation Guide.md`          | 2–5  | How to stand FitSD up in your team — the standup checklist and implementation profile |
 | `FitSD — Quickstart.md`                    | 0    | The five-move path from "what's this?" to "we're using it"          |
 | `FitSD — Roadmap.md`                       | 0    | Direction of travel — bigger picture than the backlog               |
 | `FitSD — Origins.md`                       | 0    | Where the thinking came from                                        |
@@ -42,8 +43,10 @@ You don't need to read it all — pick your path:
 | `reference/FitSD — Standards Alignment.md` | 0    | How it maps to ISO 27001, NIS2, ITIL and FitSM                      |
 | `reference/FitSD — Influences.md`          | 0    | The Lean / DevOps canon behind the thinking (non-normative)        |
 | `reference/FitSD — Information Stores.md`  | 0    | The registers and records FitSD relies on — tech-agnostic, the data model |
+| `reference/FitSD — Service Acceptance Criteria.md` | 0 | The SAC defined once — inheritable categories plus your ratifiable baseline |
 | `capabilities/`                            | 2/4  | The process docs and forms — built out for Solution Development     |
 | `diagrams/`, `BACKLOG.md`                  | —    | Mermaid diagrams; the running list of what's next                   |
+| `CHANGELOG.md`                             | —    | Notable changes to the standard, per release — for implementers     |
 | `LICENSE`                                  | —    | Creative Commons Attribution 4.0 (CC BY 4.0)                        |
 
 ## The five capabilities
@@ -56,8 +59,8 @@ You don't need to read it all — pick your path:
 | Run & restore                       | FSD-RR | Card built (`capabilities/`)                             |
 | Secure & assure                     | FSD-SA | Card built (`capabilities/`)                             |
 
-Solution Development is built out in full — a process and three forms. The other four each have a **capability card** — a one-page orientation, not a full process: what it governs, the requirements it carries, and which existing standard or process to satisfy them with. That's the design — FitSD tells you *what* good looks like and lets you keep the *how* you already have.
+Solution Development is built out in full — a process and its forms (intake, two gates, and acceptance). The other four each have a **capability card** — a one-page orientation, not a full process: what it governs, the requirements it carries, and which existing standard or process to satisfy them with. That's the design — FitSD tells you *what* good looks like and lets you keep the *how* you already have.
 
 ## Where it's at
 
-v0.2, founding layer (hardened). The charter and requirements are drafted; Solution Development has its full process and three forms; the other four capabilities have cards. v0.2 added the full service lifecycle (end-of-life review & retirement), the information-stores layer, continuity in the Definition of Done, and a new-technology intake control. The roles model (Tier 3), the maturity self-check (Tier 5) and a worked example are next — see `BACKLOG.md` and `FitSD — Roadmap.md`.
+v0.2, founding layer (hardened) — with **v0.3 in progress** on the `v0.3` branch. The charter and requirements are drafted; Solution Development has its full process and forms (intake, two gates, acceptance); the other four capabilities have cards. v0.2 added the full service lifecycle (end-of-life review & retirement), the information-stores layer, continuity in the Definition of Done, and a new-technology intake control. v0.3 reframes the SAC as an inheritable, org-ratified baseline (FSD-GV-7), adds the Idea Brief form (FSD-FRM-00) and a business Implementation Guide, and simplifies the Solution Development forms. The roles model (Tier 3), the maturity self-check (Tier 5) and a worked example are next — see `BACKLOG.md` and `FitSD — Roadmap.md`.

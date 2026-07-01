@@ -21,11 +21,11 @@ The shape, in one line: FitSD uses **two gates** — *is this worth doing?* (Gat
 ## Before you start (5 minutes)
 
 - Pick **one** real piece of upcoming work — something **net-new** (a new service, tool, or capability — not a routine change to something you already run). A tool to stand up, a service to replace, a capability to add.
-- Grab the three forms from `capabilities/solution-development/`: Gate 1 (Outline Proposal), Gate 2 (Solution Design), and the Service Acceptance Record.
+- Grab the forms from `capabilities/solution-development/`: the Idea Brief (FSD-FRM-00), Gate 1 (Outline Proposal), Gate 2 (Solution Design), and the Service Acceptance Record.
 
 ## 1. Write the Idea Brief — half a day, tops
 
-One page. What's the problem, what would "done" look like, what's roughly in and out of scope. Don't design anything yet; you're just getting enough on paper to decide whether it's worth a proper look. (A public worked example, run end to end, is in the works.)
+One page (there's a template — FSD-FRM-00). What's the problem, what would "done" look like, what's roughly in and out of scope. Don't design anything yet; you're just getting enough on paper to decide whether it's worth a proper look. (A public worked example, run end to end, is in the works.)
 
 ## 2. Take it to Gate 1 — one short conversation
 
@@ -33,7 +33,7 @@ Fill the Gate 1 form: the driver, a rough value/risk read, T-shirt effort, the o
 
 ## 3. Design it at Gate 2 — once Gate 1 says go
 
-Now you design. Requirements, an architecture sketch with security in it, and the bit teams skip: how each acceptance criterion will actually be met — documentation, tested backup, access, monitoring, support, cost. If you can't yet say how you'll back it up or who'll support it, you've found the problem now instead of in six months.
+Now you design. Requirements, an architecture sketch with security in it, and the bit teams skip: how each acceptance criterion in your SAC baseline will actually be met — documentation, tested backup, access, monitoring, support, cost. If you can't yet say how you'll back it up or who'll support it, you've found the problem now instead of in six months.
 
 ## 4. Build it — through your normal change process
 
