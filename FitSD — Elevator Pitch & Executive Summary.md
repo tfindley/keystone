@@ -61,7 +61,7 @@ It is not a substitute for a full ISMS or ITIL where certification scope or a co
 
 ### Status
 
-v0.2 — the founding layer, hardened. The charter, requirements and all five capabilities are drafted, with Solution Development built out in full (a process and three forms) and the rest as one-page capability cards. v0.2 added the full service lifecycle (end-of-life review and controlled retirement), the information-stores layer, continuity in the Definition of Done, and a new-technology intake control. A public worked example and the maturity self-check are the next milestones (see the *Roadmap*).
+v0.2 — the founding layer, hardened (with v0.3 in progress). The charter, requirements and all five capabilities are drafted, with Solution Development built out in full (a process and its intake, gate and acceptance forms) and the rest as one-page capability cards. v0.2 added the full service lifecycle (end-of-life review and controlled retirement), the information-stores layer, continuity in the Definition of Done, and a new-technology intake control. A public worked example and the maturity self-check are the next milestones (see the *Roadmap*).
 
 ---
 

@@ -87,7 +87,7 @@ The gap is the certification apparatus: a formal risk methodology, the SoA, inte
 
 ### 5.2 Annex A controls (93 controls, 4 themes) — strong
 
-FitSD's Service Acceptance Criteria and FSD-SA operationalise specific controls and produce the evidence auditors ask for.
+FitSD's Service Acceptance Criteria (defined in *FitSD — Service Acceptance Criteria*) and FSD-SA operationalise specific controls and produce the evidence auditors ask for.
 
 | FitSD element                              | ISO 27001:2022 Annex A control                                                       |
 | --------------------------------------------- | ------------------------------------------------------------------------------------ |

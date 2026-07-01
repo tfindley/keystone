@@ -27,11 +27,23 @@ Deferred ideas and improvements surfaced while building the framework, many from
 
 ## Solution Development
 
-- **SAC topic guidance / sample documents.** Short "how to write a good X criterion" notes (and worked samples) per SAC topic. *Deferred deliberately until a worked example has landed*, so the samples are real, not invented.
-- **Gate 2 "selected option" field.** Add an explicit "Selected option + evaluation reference" field to FSD-FRM-02 — the clean seam between the options evaluation (research) and design. (Surfaced by the Gate 2 test.)
+- **SAC sample *values* + topic guidance.** Per-criterion "how to write a good X criterion" notes and worked *threshold values*. The SAC *structure* shipped in v0.3 (defined once as inheritable principles + a blank baseline template); the sample values stay *deferred until a worked example has landed*, so they're real, not invented.
+
+## Scope & the wider family
+
+Direction set while scoping v0.3 (fuller narrative in the `Roadmap`, "Shape & scope"). Candidates and boundaries — not yet scheduled.
+
+- **Service Level Management (candidate thin requirement).** A *thin* `shall` — each live service has agreed, recorded service levels (or an explicit "best effort" statement) with its customer. Closes the FitSM PR2 gap without building an SLM process; the availability SLO already lives in the SAC. Reference-out for the *how*.
+- **Service Reporting (candidate thin requirement).** A *thin* `shall` — service performance is reported to stakeholders at a defined cadence (could fold into the FSD-GV-5 review). Closes the FitSM PR3 gap. Reference-out for the *how*.
+- **Declared non-goals.** Full Configuration Management / CMDB (FitSM PR11), Customer Relationship Management (PR7), and capacity-as-a-discipline stay out of scope — met by "use your existing practice." Worth stating explicitly so the boundary is deliberate, not accidental.
+- **Shared core (only if the family grows).** FitSD currently double-hats as the umbrella frame (five capabilities + requirements spine + definitions — the `FSD-` prefix on everything) *and* the Solution Development deep-dive. If a second "Fit-" deep-dive (Change, Incident) becomes real, extract a shared core so siblings reference the frame rather than redefine it.
 
 ## Done (recent)
 
+- ~~SAC as inheritable principles (v0.3)~~ — SAC reframed as standing, org-tunable categories with a ratifiable baseline (new `reference/FitSD — Service Acceptance Criteria`); new requirement **FSD-GV-7** (define & inherit the baseline); SAC now defined once and referenced by name across FSD-PRO/FRM-02/FRM-03 (drift cure). *(2026-07-01)*
+- ~~Idea Brief becomes a canonical form (v0.3)~~ — **FSD-FRM-00**, a thin one-page intake; carries forward into Gate 1; closes the "no Idea Brief form" gap. *(2026-07-01)*
+- ~~Business Implementation Guide (v0.3)~~ — new `FitSD — Implementation Guide` (stand-up checklist, implementation profile, minimal roles) — the "how do we stand this up here?" layer. *(2026-07-01)*
+- ~~Gate 2 "selected option" field (v0.3)~~ — explicit "Selected option + evaluation reference" on FSD-FRM-02; plus §4/§5 Monitoring de-dup and FSD-PRO §4/§8 de-dup. *(2026-07-01)*
 - ~~Lifecycle completion & information-stores layer (v0.2)~~ — FSD-RR-7 (end-of-life review & retirement); FSD-GV-4 broadened (demand pipeline + retained history); continuity added to the SAC; new-technology intake trigger + Gate 1 vendor due-diligence; new `reference/FitSD — Information Stores` + Diagrams §6; tier model reframed into Framework / Implementation layers. *(2026-06-23)*
 - ~~Consistency pass (v0.1 review)~~ — added the sixth demand family (Finance & people) to the context diagrams; synced the Gate 2 "rework" edge label across both gate-flow diagrams; reconciled the "sixth capability" wording in Charter §4 with the FSD-SC plan; gitignored `.repowise/` and `.claude/settings.local.json`. *(2026-06-23)*
 - ~~De-number the SAC~~ — removed the hardcoded count from prose and the `#` column; criteria referenced by name. *(2026-06-22)*

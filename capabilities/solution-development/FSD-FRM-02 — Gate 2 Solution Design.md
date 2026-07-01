@@ -4,7 +4,7 @@ framework: FitSD
 document_id: FSD-FRM-02
 capability: Solution Development
 tier: 4
-version: 0.2
+version: 0.3
 status: draft
 owner: Management System Owner
 approver: Approver
@@ -40,6 +40,7 @@ tags:
 | Field                       | Entry |
 | --------------------------- | ----- |
 | **Outcome / requirement**   |       |
+| **Selected option**         | *Which Gate 1 delivery option was chosen, and the evaluation / research reference* |
 | **Value (recap)**           |       |
 | **Effort (recap, refined)** |       |
 
@@ -65,19 +66,20 @@ tags:
 | **Security in the design** |       |
 | **Design exceptions**      |       |
 
-## 4. Operational impact
+## 4. Operational impact — cross-process
+
+*Where this service touches your **other** operating processes and systems. The SAC-aligned operational design (monitoring, backup, access, availability, support, cost) lives in §5 — don't duplicate it here.*
 
 | Integration point                        | Impact / approach |
 | ---------------------------------------- | ----------------- |
-| **Monitoring**                           |                   |
-| **Billing / chargeback** (if applicable) |                   |
+| **Billing / chargeback** (if applicable) | *Integration with the billing/finance system (run-cost itself is a SAC item — §5)* |
 | **Service desk / ITSM**                  |                   |
 | **Environments** (dev / ongoing)         |                   |
 | **Process impact**                       | *Does this force changes to your change, incident or other operating processes? Note which capability — FSD-CH / FSD-RR / FSD-SA.* |
 
 ## 5. Service Acceptance Criteria — design approach
 
-State *how* each criterion will be met. Each is proven later on FSD-FRM-03.
+State *how* each criterion will be met **against your organisation's standing SAC baseline** (the categories are defined in *FitSD — Service Acceptance Criteria*; your thresholds are the baseline you inherit). Each is proven later on FSD-FRM-03.
 
 | Criterion | Design approach |
 |---|---|

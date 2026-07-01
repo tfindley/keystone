@@ -26,6 +26,8 @@ tags: [fitsd, definitions, glossary]
 
 **Gate 2 (Solution Design).** The second gate: *is it ready to build?* The design, including how it will be run.
 
+**Idea Brief.** The optional one-page intake (FSD-FRM-00) raised before Gate 1 to decide whether an idea is worth a proper look. Carries forward into Gate 1; it designs nothing.
+
 **Implementation profile.** A team's local version of FitSD — their actual documents and tools, mapped to the requirements.
 
 **Net-new.** Work that meets the intake test (a new service or capability, new infrastructure, material effort or ongoing cost). The line that separates Solution Development work from routine change.
@@ -40,7 +42,9 @@ tags: [fitsd, definitions, glossary]
 
 **Service Acceptance.** The close-out at the end of delivery: proof, with evidence, that a service is ready before it goes live.
 
-**Service Acceptance Criteria (SAC) / Definition of Done.** The standard set of conditions a service must meet to be accepted: documentation, tested backup, security, access, availability, monitoring & alerting, incident profile, supportability, cost/licensing.
+**Service Acceptance Criteria (SAC) / Definition of Done.** The standing set of conditions a service must meet to be accepted — documentation, tested backup, security, access, availability, monitoring & alerting, incident profile, supportability, cost/licensing. Fixed *categories*; each organisation sets and ratifies its own *thresholds* as a standing baseline (FSD-GV-7). Defined in *FitSD — Service Acceptance Criteria*.
+
+**SAC baseline.** An organisation's own ratified thresholds for each Service Acceptance Criterion — set once and inherited by every solution (FSD-GV-7). See *FitSD — Service Acceptance Criteria*.
 
 **Solution Owner.** The single person accountable for a proposed solution, who drives it through the gates and completes the records.
 

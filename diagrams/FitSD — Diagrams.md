@@ -24,7 +24,7 @@ Mermaid source for the framework's process and structure diagrams. These render 
 
 ```mermaid
 flowchart LR
-    Demand["Demand /<br/>Idea Brief"] --> G1{"Gate 1<br/>worth doing?"}
+    Demand["Demand /<br/>Idea Brief (FRM-00)"] --> G1{"Gate 1<br/>worth doing?"}
     G1 -->|reject| Rej["Rejected"]
     G1 -->|park| Park["Parked"]
     G1 -->|PoC first| PoC["Proof of<br/>Concept"]
